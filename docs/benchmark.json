@@ -1,0 +1,36 @@
+{
+  "list": {
+    "requests": 120,
+    "p50_ms": 322.9,
+    "p95_ms": 546.8,
+    "max_ms": 818.8
+  },
+  "detail": {
+    "requests": 120,
+    "p50_ms": 256.7,
+    "p95_ms": 422.2,
+    "max_ms": 499.8
+  },
+  "webhook_5_per_second": {
+    "requests": 15,
+    "p50_ms": 30.9,
+    "p95_ms": 72.9,
+    "max_ms": 72.9
+  },
+  "webhook_20_per_second": {
+    "requests": 60,
+    "p50_ms": 13.1,
+    "p95_ms": 109.6,
+    "max_ms": 222.0
+  },
+  "date": "2026-11-05T14:23:16.731365+00:00",
+  "employees": 20,
+  "tickets": 10000,
+  "messages": 100000,
+  "database": "PostgreSQL 17.11 on x86_64-windows, compiled by msvc-19.44.35229, 64-bit",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "logical_cpu": 6,
+  "initial_readiness_ms": 440.9,
+  "method": "One readiness probe before timing. All 20 employee sessions are established before measured requests start.",
+  "scope": "Django test client + PostgreSQL. Excludes HTTP, worker, Redis, browser and Telegram delivery."
+}

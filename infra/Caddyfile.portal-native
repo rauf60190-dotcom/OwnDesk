@@ -1,0 +1,36 @@
+{
+    admin off
+    persist_config off
+}
+http://owndesk.work:__ORIGIN_PORT__ {
+    bind 127.0.0.1
+    @plain not header X-Forwarded-Proto https
+    redir @plain https://owndesk.work{uri} 308
+    encode zstd gzip
+    request_body {
+        max_size 21MB
+    }
+    header {
+        X-Content-Type-Options nosniff
+        Referrer-Policy no-referrer
+        X-Frame-Options DENY
+        Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; media-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+    }
+    handle /api/* {
+        reverse_proxy 127.0.0.1:__API_PORT__ {
+            header_up X-Forwarded-Proto https
+            header_up X-OwnDesk-Client-IP {http.request.header.CF-Connecting-IP}
+        }
+    }
+    handle /ws/* {
+        reverse_proxy 127.0.0.1:__API_PORT__ {
+            header_up X-Forwarded-Proto https
+        }
+    }
+    handle {
+        root * "__DIST__"
+        try_files {path} /index.html
+        file_server
+    }
+}
+

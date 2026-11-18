@@ -1,0 +1,107 @@
+name: Verify source
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  frontend:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24.11.0'
+      - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+        with:
+          version: '11.25.0'
+          run_install: false
+      - run: pnpm --dir frontend install --frozen-lockfile --ignore-scripts
+      - run: pnpm --dir frontend build
+      - name: Record build inputs
+        shell: bash
+        run: |
+          printf '%s\n' "$GITHUB_SHA" > frontend/dist/source-commit.txt
+          sha256sum frontend/pnpm-lock.yaml backend/requirements.txt > frontend/dist/dependency-inputs.sha256
+          node --version > frontend/dist/node-version.txt
+          pnpm --version > frontend/dist/pnpm-version.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: frontend-unsigned-${{ github.sha }}
+          path: frontend/dist/
+          if-no-files-found: error
+          retention-days: 14
+
+  backend:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-2022, ubuntu-24.04]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
+    env:
+      DEBUG: '1'
+      LOCAL_CHANNELS: '1'
+      DATABASE_URL: 'sqlite:///:memory:'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.14.10'
+      - run: python -m pip install -r backend/requirements.txt
+      - run: python tools/check_source.py
+      - name: Windows tests
+        if: runner.os == 'Windows'
+        run: python -m pytest -c backend/pytest.ini tests -m "not postgres"
+      - name: Linux application tests
+        if: runner.os == 'Linux'
+        run: python -m pytest -c backend/pytest.ini tests -m "not postgres" --ignore=tests/test_linux_setup.py --ignore=tests/test_linux_backup.py --ignore=tests/test_linux_update.py
+      - name: Linux administration fixture tests
+        if: runner.os == 'Linux'
+        shell: bash
+        # Only the disposable hosted runner: ownership guards require root-owned fixtures.
+        run: sudo --preserve-env=DEBUG,LOCAL_CHANNELS,DATABASE_URL "$(command -v python)" -m pytest -c backend/pytest.ini tests/test_linux_setup.py tests/test_linux_backup.py tests/test_linux_update.py
+
+  postgres:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:17.6
+        env:
+          POSTGRES_USER: owndesk_ci
+          POSTGRES_PASSWORD: disposable-ci-only
+          POSTGRES_DB: owndesk_ci
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U owndesk_ci"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 12
+    env:
+      DEBUG: '1'
+      LOCAL_CHANNELS: '1'
+      DATABASE_URL: 'postgresql://owndesk_ci:disposable-ci-only@127.0.0.1:5432/owndesk_ci'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.14.10'
+      - run: python -m pip install -r backend/requirements.txt
+      - run: python -m pytest -c backend/pytest.ini tests -m postgres

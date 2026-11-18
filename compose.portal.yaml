@@ -1,0 +1,23 @@
+name: owndesk-portal
+
+services:
+  migrate:
+    environment: &portal-mode
+      DEPLOYMENT_MODE: portal
+      LOCAL_EMAIL_PREVIEW: "0"
+      LOCAL_TELEGRAM_POLLING: "0"
+  backend:
+    environment:
+      <<: *portal-mode
+      PORTAL_RELEASE_DIR: /releases
+    volumes:
+      - type: bind
+        source: ./releases
+        target: /releases
+        read_only: true
+        bind:
+          create_host_path: false
+  worker:
+    environment: *portal-mode
+  beat:
+    environment: *portal-mode

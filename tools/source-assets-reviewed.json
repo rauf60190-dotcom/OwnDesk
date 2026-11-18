@@ -1,0 +1,17 @@
+{
+  "scope": "OwnDesk UI samples visually reviewed for this source candidate; no real account credentials visible",
+  "files": {
+    "frontend/src/assets/demo-reports.jpg": {
+      "sha256": "7858f00e8191ba2f3c8ba2b378a5ac7f31455ac497573626e67d4a8511926a7a",
+      "review": "OwnDesk development/demo interface with generic roles and seeded demo requests"
+    },
+    "docs/screenshots/queue-desktop.png": {
+      "sha256": "565ed054ab8bea48a7b14aac50206de519a6981c22c61900215ec885d5e3dffd",
+      "review": "OwnDesk development/demo interface with generic roles and seeded demo requests"
+    },
+    "docs/screenshots/queue-mobile.png": {
+      "sha256": "ef7796ed73801ef069bc55edad2d24268c98805410c5e6a8d2e397e6d9362b5c",
+      "review": "OwnDesk development/demo interface with generic roles and seeded demo requests"
+    }
+  }
+}

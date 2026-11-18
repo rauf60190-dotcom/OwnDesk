@@ -1,0 +1,29 @@
+{
+	auto_https off
+}
+
+:5173 {
+	bind 127.0.0.1
+	encode zstd gzip
+	request_body {
+		max_size 21MB
+	}
+	header {
+		X-Content-Type-Options nosniff
+		Referrer-Policy no-referrer
+		X-Frame-Options DENY
+		Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; media-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+	}
+	@backend path /api/* /ws/*
+	handle @backend {
+		reverse_proxy 127.0.0.1:8000 {
+			header_up X-Forwarded-Proto https
+			header_up X-OwnDesk-Client-IP {http.request.header.CF-Connecting-IP}
+		}
+	}
+	handle {
+		root * "{$OWNDESK_DIST_DIR}"
+		try_files {path} /index.html
+		file_server
+	}
+}

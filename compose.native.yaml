@@ -1,0 +1,52 @@
+x-app: &app
+  image: owndesk-native:${OWNDESK_VERSION:?Set OWNDESK_VERSION}
+  build:
+    context: .
+    dockerfile: infra/native.Dockerfile
+  environment:
+    DATABASE_URL: postgresql://owndesk:${POSTGRES_APP_PASSWORD:?Set POSTGRES_APP_PASSWORD}@db:5432/owndesk
+    OWNDESK_DATA_DIR: /data
+  volumes: ["organization_data:/data"]
+services:
+  db:
+    image: postgres:17.11-bookworm
+    environment:
+      POSTGRES_DB: owndesk
+      POSTGRES_USER: owndesk_admin
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}
+    volumes: ["postgres_data:/var/lib/postgresql/data"]
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U owndesk_admin -d owndesk"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  init-data:
+    <<: *app
+    user: root
+    environment:
+      POSTGRES_ADMIN_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}
+      POSTGRES_APP_PASSWORD: ${POSTGRES_APP_PASSWORD:?Set POSTGRES_APP_PASSWORD}
+    command: ["python", "infra/init_native.py"]
+    depends_on:
+      db: {condition: service_healthy}
+    restart: "no"
+  app:
+    <<: *app
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    read_only: true
+    tmpfs: ["/tmp:rw,nosuid,noexec,size=64m"]
+    depends_on:
+      db: {condition: service_healthy}
+      init-data: {condition: service_completed_successfully}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import json,time; p='/data/portal-connection.json.status.json'; s=json.load(open(p)); assert s['state']=='active' and 0 <= time.time()-s['checked_at'] < 90"]
+      interval: 30s
+      timeout: 5s
+      start_period: 120s
+      retries: 3
+volumes:
+  postgres_data:
+  organization_data:
