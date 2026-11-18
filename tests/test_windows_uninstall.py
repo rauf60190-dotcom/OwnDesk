@@ -107,5 +107,8 @@ def test_absent_service_is_read_only(installed):
 
 def test_ui_will_not_run_removal_without_exact_confirmation(monkeypatch):
     runner=Mock();monkeypatch.setattr(ui,'run_process',runner)
+    lookup=Mock(side_effect=AssertionError('Invalid confirmation must be rejected before path lookup'))
+    monkeypatch.setattr(ui,'paths',lookup)
     with pytest.raises(ValueError):ui.run('remove',lambda _:None,'f'*64,'OwnDeskPortal')
+    lookup.assert_not_called()
     runner.assert_not_called()
