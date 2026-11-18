@@ -105,3 +105,51 @@ jobs:
           python-version: '3.14.10'
       - run: python -m pip install -r backend/requirements.txt
       - run: python -m pytest -c backend/pytest.ini tests -m postgres
+
+  windows-installer:
+    needs: [frontend, backend, postgres]
+    runs-on: windows-2022
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.14.10'
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24.11.0'
+      - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+        with:
+          version: '11.25.0'
+          run_install: false
+      - run: pnpm --dir frontend install --frozen-lockfile --ignore-scripts
+      - run: pnpm --dir frontend build
+      - name: Create a new candidate payload from this commit
+        shell: pwsh
+        run: python tools/package_candidate.py --output "$env:RUNNER_TEMP/payload"
+      - name: Compile and verify unsigned bootstrap
+        shell: pwsh
+        run: |
+          ./infra/windows-installer/Build-Installer.ps1 -Archive "$env:RUNNER_TEMP/payload/OwnDesk.zip" -Metadata "$env:RUNNER_TEMP/payload/release.json" -OutputDirectory "$env:RUNNER_TEMP/installer"
+      - name: Check extraction without installing a service
+        shell: pwsh
+        run: |
+          $exe = Get-ChildItem -LiteralPath "$env:RUNNER_TEMP/installer" -Filter '*.exe'
+          if (@($exe).Count -ne 1) { throw 'Expected exactly one installer' }
+          $extractPath = "$env:RUNNER_TEMP/extract-test"
+          $reportPath = "$env:RUNNER_TEMP/installer/extraction-verified.json"
+          $process = Start-Process -FilePath $exe.FullName -ArgumentList @('--extract-test', ('"' + $extractPath + '"'), ('"' + $reportPath + '"')) -WindowStyle Hidden -Wait -PassThru
+          if ($process.ExitCode -ne 0) { throw 'Extraction test failed' }
+          $report = Get-Content -LiteralPath $reportPath -Raw | ConvertFrom-Json
+          if (!$report.success -or $report.services_modified -or $report.processes_started -ne 0) { throw 'Unexpected extraction result' }
+          Copy-Item -LiteralPath "$env:RUNNER_TEMP/payload/release.json" -Destination "$env:RUNNER_TEMP/installer/payload-metadata.json"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: windows-installer-unsigned-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/installer/*.exe
+            ${{ runner.temp }}/installer/*.json
+          if-no-files-found: error
+          retention-days: 14
