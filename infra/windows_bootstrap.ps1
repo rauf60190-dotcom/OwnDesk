@@ -1,12 +1,18 @@
-﻿$ErrorActionPreference = 'Stop'
+﻿param([switch]$DisclosureAccepted)
+$ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Windows.Forms
 try {
+    if (-not $DisclosureAccepted) {
+        $taskNotice = [IO.File]::ReadAllText((Join-Path $PSScriptRoot 'INSTALLATION-NOTICE.txt'), [Text.Encoding]::UTF8)
+        $taskConsent = [System.Windows.Forms.MessageBox]::Show($taskNotice, 'OwnDesk — перед подготовкой', 'OKCancel', 'Information', 'Button2')
+        if ($taskConsent -ne 'OK') { exit 0 }
+    }
     if (-not [Environment]::Is64BitOperatingSystem -or $env:PROCESSOR_ARCHITECTURE -eq 'ARM64') {
         throw 'OwnDesk Server requires Windows x86-64.'
     }
     $taskPrincipal = [Security.Principal.WindowsPrincipal]::new([Security.Principal.WindowsIdentity]::GetCurrent())
     if (-not $taskPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
-        $taskArgs = '-NoProfile -ExecutionPolicy Bypass -File "' + $PSCommandPath + '"'
+        $taskArgs = '-NoProfile -ExecutionPolicy Bypass -File "' + $PSCommandPath + '" -DisclosureAccepted'
         $taskElevated = Start-Process -FilePath 'powershell.exe' -ArgumentList $taskArgs -Verb RunAs -WindowStyle Hidden -PassThru -Wait
         exit $taskElevated.ExitCode
     }

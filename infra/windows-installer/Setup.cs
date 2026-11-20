@@ -125,7 +125,8 @@ internal static class Setup
     [STAThread]
     static int Main(string[] args)
     {
-        bool diagnostic = args.Length > 0;
+        bool approved = args.Length == 1 && args[0] == "--install-approved";
+        bool diagnostic = args.Length > 0 && !approved;
         try
         {
             if (args.Length == 2 && args[0] == "--verify")
@@ -142,17 +143,27 @@ internal static class Setup
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            if (args.Length == 3 && args[0] == "--preview-disclosure")
+            {
+                using (Notice form = new Notice(args[1])) Application.Run(form);
+                Report(args[2], new { success = true, preview = true, consent_default = false, services_modified = false });
+                return 0;
+            }
             if (args.Length == 3 && args[0] == "--preview")
             {
                 using (Wizard form = new Wizard(true, args[1])) Application.Run(form);
                 Report(args[2], new { success = true, preview = true, services_modified = false });
                 return 0;
             }
-            if (args.Length != 0) throw new ArgumentException("Неизвестные параметры запуска.");
+            if (args.Length != 0 && !approved) throw new ArgumentException("Неизвестные параметры запуска.");
+            if (!approved)
+                using (Notice form = new Notice(null))
+                    if (form.ShowDialog() != DialogResult.OK) return 0;
             using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
                 if (!new WindowsPrincipal(identity).IsInRole(WindowsBuiltInRole.Administrator))
                 {
                     ProcessStartInfo elevated = new ProcessStartInfo(Application.ExecutablePath);
+                    elevated.Arguments = "--install-approved";
                     elevated.UseShellExecute = true; elevated.Verb = "runas";
                     using (Process child = Process.Start(elevated)) { child.WaitForExit(); return child.ExitCode; }
                 }
@@ -167,6 +178,40 @@ internal static class Setup
                 : error.Message;
             MessageBox.Show(message, "OwnDesk — не удалось запустить установщик", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return 1;
+        }
+    }
+
+    internal sealed class Notice : Form
+    {
+        public Notice(string previewImage)
+        {
+            Text = "OwnDesk — перед установкой"; ClientSize = new Size(740, 620);
+            StartPosition = FormStartPosition.CenterScreen; FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false; BackColor = Color.FromArgb(11,18,32); ForeColor = Color.White;
+            Font = new Font("Segoe UI", 10);
+            Label title = new Label { Text = "Установка и ваши данные", Font = new Font("Segoe UI", 19, FontStyle.Bold), AutoSize = true, Location = new Point(24,20) };
+            TextBox notice = new TextBox { Multiline = true, ReadOnly = true, ScrollBars = ScrollBars.Vertical,
+                BackColor = Color.FromArgb(17,29,48), ForeColor = Color.FromArgb(235,241,255),
+                Location = new Point(24,70), Size = new Size(692,425) };
+            using (Stream source = Assembly.GetExecutingAssembly().GetManifestResourceStream("OwnDesk.InstallationNotice"))
+            {
+                if (source == null) throw new InvalidDataException("Нет описания установки. Скачайте полный установщик.");
+                using (StreamReader reader = new StreamReader(source, Encoding.UTF8)) notice.Text = reader.ReadToEnd().Replace("\r\n", "\n").Replace("\n", Environment.NewLine);
+            }
+            CheckBox consent = new CheckBox { Text = "Я ознакомился с действиями установщика и сетевыми подключениями",
+                Location = new Point(24,510), Size = new Size(692,35), Checked = false };
+            Button proceed = new Button { Text = "Продолжить подготовку", Location = new Point(446,565), Size = new Size(270,34),
+                Enabled = false, DialogResult = DialogResult.OK, BackColor = Color.FromArgb(55,102,214), ForeColor = Color.White, FlatStyle = FlatStyle.Flat };
+            Button cancel = new Button { Text = "Отмена", Location = new Point(24,565), Size = new Size(135,34),
+                DialogResult = DialogResult.Cancel, BackColor = Color.FromArgb(36,52,79), ForeColor = Color.White, FlatStyle = FlatStyle.Flat };
+            consent.CheckedChanged += delegate { proceed.Enabled = consent.Checked; };
+            CancelButton = cancel;
+            Controls.AddRange(new Control[] { title, notice, consent, proceed, cancel });
+            if (previewImage != null) Shown += delegate {
+                if (consent.Checked || proceed.Enabled) throw new InvalidOperationException("Согласие не должно быть выбрано заранее.");
+                using (Bitmap bitmap = new Bitmap(Width, Height)) { DrawToBitmap(bitmap, new Rectangle(Point.Empty, Size)); bitmap.Save(previewImage); }
+                BeginInvoke(new Action(Close));
+            };
         }
     }
 
@@ -205,7 +250,7 @@ internal static class Setup
                 string root = Extract(payload, directory, true);
                 string shell = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), "WindowsPowerShell", "v1.0", "powershell.exe");
                 BeginInvoke(new Action(delegate { status.Text = "Открываем мастер установки OwnDesk…\nПервый запуск может занять несколько минут."; }));
-                ProcessStartInfo process = new ProcessStartInfo(shell, "-NoProfile -ExecutionPolicy Bypass -File \"" + Path.Combine(root,"infra","windows_bootstrap.ps1") + "\"");
+                ProcessStartInfo process = new ProcessStartInfo(shell, "-NoProfile -ExecutionPolicy Bypass -File \"" + Path.Combine(root,"infra","windows_bootstrap.ps1") + "\" -DisclosureAccepted");
                 process.UseShellExecute = false; process.CreateNoWindow = true; process.WorkingDirectory = root;
                 using (Process child = Process.Start(process)) { child.WaitForExit(); if (child.ExitCode != 0)
                     throw new InvalidOperationException("Мастер не смог запуститься или завершился с ошибкой.\nЖурнал: " + Path.Combine(root,".runtime","bootstrap-error.log")); }

@@ -19,6 +19,7 @@ $buildSource=Join-Path $buildOutput.FullName 'Setup.generated.cs'
 [IO.File]::WriteAllText($buildSource,$buildGenerated,[Text.UTF8Encoding]::new($true))
 $buildExe=Join-Path $buildOutput.FullName ('OwnDesk-Setup-'+$buildMeta.version+'.exe')
 $buildArguments=@('/nologo','/target:winexe','/platform:x64','/optimize+',('/out:'+$buildExe),('/win32manifest:'+(Join-Path $PSScriptRoot 'app.manifest')),('/resource:'+$buildArchive+',OwnDesk.Payload'),'/reference:System.dll','/reference:System.Core.dll','/reference:System.Drawing.dll','/reference:System.Windows.Forms.dll','/reference:System.IO.Compression.dll','/reference:System.Web.Extensions.dll',$buildSource)
+$buildArguments+=('/resource:'+(Join-Path $PSScriptRoot '../INSTALLATION-NOTICE.txt')+',OwnDesk.InstallationNotice')
 & $buildCompiler @buildArguments
 if($LASTEXITCODE -ne 0) { throw 'Installer compilation failed' }
 $buildVerified=Join-Path $buildOutput.FullName 'payload-verified.json'
