@@ -46,6 +46,19 @@ def main():
               'gui_tested': False, 'uac_tested': False, 'os_reboot_tested': False,
               'public_pairing_tested': False, 'public_release_approved': False}
 
+    original_execute = service.execute
+    def execute_with_acl_diagnostics(command, report=print, **options):
+        # This helper only receives paths and fixed Windows SIDs, never credentials.
+        if any(str(value).endswith('set_directory_acl.ps1') for value in command):
+            lines = []
+            try:
+                return original_execute(command, lines.append, **options)
+            except Exception:
+                result['acl_diagnostic'] = lines[-24:]
+                raise
+        return original_execute(command, report, **options)
+    service.execute = execute_with_acl_diagnostics
+
     def checkpoint(stage, **values):
         result.update(stage=stage, **values)
         print('OwnDesk isolated acceptance: ' + stage, flush=True)
