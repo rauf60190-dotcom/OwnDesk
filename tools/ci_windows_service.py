@@ -34,6 +34,7 @@ def main():
         raise ValueError('Payload commit does not match this run')
     sys.path.insert(0, str(source / 'infra'))
     import windows_service as service
+    from windows_setup import windows_powershell_environment
     service.admin_required()
     identity = 'OwnDeskCI' + uuid4().hex
     app = Path(os.environ['ProgramFiles']) / 'OwnDeskAcceptance' / identity
@@ -64,10 +65,11 @@ def main():
         print('OwnDesk isolated acceptance: ' + stage, flush=True)
 
     def query():
-        command = (f"Get-CimInstance Win32_Service -Filter \"Name='{identity}'\" | "
+        command = ("$ErrorActionPreference='Stop'; " + f"Get-CimInstance Win32_Service -Filter \"Name='{identity}'\" | "
                    'Select-Object Name,StartName,StartMode,State,PathName | ConvertTo-Json -Compress')
         value = subprocess.run(['powershell.exe', '-NoProfile', '-NonInteractive', '-Command', command],
-            capture_output=True, text=True, check=True, creationflags=subprocess.CREATE_NO_WINDOW)
+            capture_output=True, text=True, check=True, creationflags=subprocess.CREATE_NO_WINDOW,
+            env=windows_powershell_environment())
         return json.loads(value.stdout) if value.stdout.strip() else None
 
     def owns(actual):

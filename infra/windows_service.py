@@ -14,7 +14,7 @@ import xml.etree.ElementTree as ET
 from urllib.request import Request, urlopen
 from uuid import UUID
 
-from windows_setup import ROOT, copy_interpreter, execute, prepare_python, prepare_tools
+from windows_setup import ROOT, copy_interpreter, execute, prepare_python, prepare_tools, windows_powershell_environment
 
 SERVICE = 'OwnDeskServer'
 
@@ -164,7 +164,7 @@ def install(code='', report=print, code_provider=None):
     # Fail closed if the wrapper did not honor the restricted service identity.
     result = subprocess.run(['powershell.exe', '-NoProfile', '-NonInteractive', '-Command',
         f"(Get-CimInstance Win32_Service -Filter \"Name='{SERVICE}'\").StartName"], capture_output=True, text=True,
-        creationflags=subprocess.CREATE_NO_WINDOW, check=True)
+        creationflags=subprocess.CREATE_NO_WINDOW, check=True, env=windows_powershell_environment())
     if result.stdout.strip().lower() != r'nt authority\localservice':
         execute([host, 'uninstall'], report)
         raise RuntimeError('Учётная запись службы не подтверждена; служба удалена, данные сохранены.')

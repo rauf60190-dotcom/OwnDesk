@@ -252,6 +252,7 @@ internal static class Setup
                 BeginInvoke(new Action(delegate { status.Text = "Открываем мастер установки OwnDesk…\nПервый запуск может занять несколько минут."; }));
                 ProcessStartInfo process = new ProcessStartInfo(shell, "-NoProfile -ExecutionPolicy Bypass -File \"" + Path.Combine(root,"infra","windows_bootstrap.ps1") + "\" -DisclosureAccepted");
                 process.UseShellExecute = false; process.CreateNoWindow = true; process.WorkingDirectory = root;
+                process.EnvironmentVariables.Remove("PSModulePath");
                 using (Process child = Process.Start(process)) { child.WaitForExit(); if (child.ExitCode != 0)
                     throw new InvalidOperationException("Мастер не смог запуститься или завершился с ошибкой.\nЖурнал: " + Path.Combine(root,".runtime","bootstrap-error.log")); }
             };

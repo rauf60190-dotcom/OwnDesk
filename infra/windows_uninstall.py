@@ -12,6 +12,7 @@ from uuid import uuid4
 
 import windows_service as service
 import windows_update as update
+from windows_setup import windows_powershell_environment
 from native_runtime import save_private
 
 CONFIGS=('runtime-profile.json','secrets.json','portal-connection.json','mail-settings.json')
@@ -23,7 +24,8 @@ def registration(name):
     if not re.fullmatch(r'OwnDesk[A-Za-z0-9]{1,60}',name):raise ValueError('Invalid service name')
     result=subprocess.run(['powershell.exe','-NoProfile','-NonInteractive','-Command',
         f"Get-CimInstance Win32_Service -Filter \"Name='{name}'\" | Select-Object Name,State,StartName,PathName | ConvertTo-Json -Compress"],
-        capture_output=True,text=True,check=True,creationflags=subprocess.CREATE_NO_WINDOW)
+        capture_output=True,text=True,check=True,creationflags=subprocess.CREATE_NO_WINDOW,
+        env=windows_powershell_environment())
     return json.loads(result.stdout) if result.stdout.strip() else None
 
 def private_fingerprints(data):

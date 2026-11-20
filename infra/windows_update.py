@@ -158,7 +158,8 @@ def query(spec):
         raise ValueError('Invalid OwnDesk service name')
     result = subprocess.run(['powershell.exe', '-NoProfile', '-NonInteractive', '-Command',
         f"Get-CimInstance Win32_Service -Filter \"Name='{spec.name}'\" | Select-Object Name,State,StartName,PathName | ConvertTo-Json -Compress"],
-        capture_output=True, text=True, check=True, creationflags=subprocess.CREATE_NO_WINDOW)
+        capture_output=True, text=True, check=True, creationflags=subprocess.CREATE_NO_WINDOW,
+        env=setup.windows_powershell_environment())
     value = json.loads(result.stdout) if result.stdout.strip() else None
     if not value or value['StartName'].lower() != 'nt authority\\' + spec.account.lower():
         raise RuntimeError('The registered service identity was not confirmed')

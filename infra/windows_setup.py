@@ -98,11 +98,20 @@ def prepare_tools(data, report=print, cache=None):
     }
 
 
+def windows_powershell_environment(environment=None):
+    """Let Windows PowerShell rebuild its own module paths after a PowerShell 7 parent."""
+    values = os.environ if environment is None else environment
+    return {key: value for key, value in values.items() if key.upper() != 'PSMODULEPATH'}
+
+
 def execute(args, report=print, *, stdin=None):
+    environment = {**os.environ, 'PYTHONUTF8': '1', 'PYTHONIOENCODING': 'utf-8'}
+    if str(args[0]).replace('\\', '/').rsplit('/', 1)[-1].lower() == 'powershell.exe':
+        environment = windows_powershell_environment(environment)
     with subprocess.Popen([str(arg) for arg in args], stdin=subprocess.PIPE if stdin is not None else subprocess.DEVNULL,
                           stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, encoding='utf-8', errors='replace',
                           creationflags=subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0,
-                          env={**os.environ, 'PYTHONUTF8': '1', 'PYTHONIOENCODING': 'utf-8'}) as child:
+                          env=environment) as child:
         if stdin is not None:
             child.stdin.write(stdin)
             child.stdin.close()

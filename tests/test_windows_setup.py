@@ -18,6 +18,30 @@ service = importlib.util.module_from_spec(spec_service)
 spec_service.loader.exec_module(service)
 
 
+@pytest.mark.parametrize('executable,clean_paths', [
+    ('powershell.exe', True),
+    (r'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe', True),
+    ('pwsh.exe', False),
+    ('python.exe', False),
+])
+def test_child_powershell_does_not_inherit_incompatible_module_paths(monkeypatch, executable, clean_paths):
+    import os
+    monkeypatch.setenv('PSModulePath', 'C:/Program Files/PowerShell/7/Modules')
+    monkeypatch.setenv('OWNDESK_TEST_ENV', 'preserved')
+    class Child:
+        stdout = []
+        def __enter__(self): return self
+        def __exit__(self, *args): return False
+        def wait(self): return 0
+    with patch.object(setup.subprocess, 'Popen', return_value=Child()) as popen:
+        setup.execute([executable, '-NoProfile'], lambda _: None)
+    environment = popen.call_args.kwargs['env']
+    assert any(key.upper() == 'PSMODULEPATH' for key in environment) is not clean_paths
+    assert environment['OWNDESK_TEST_ENV'] == 'preserved'
+    assert environment['PYTHONUTF8'] == '1'
+    assert os.environ['PSModulePath'] == 'C:/Program Files/PowerShell/7/Modules'
+
+
 def test_download_rejects_corruption_and_removes_partial_file(tmp_path):
     from io import BytesIO
     item = {'filename': 'tool.exe', 'url': 'https://example.test/tool.exe',
