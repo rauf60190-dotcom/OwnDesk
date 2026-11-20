@@ -109,7 +109,7 @@ jobs:
   windows-installer:
     needs: [frontend, backend, postgres]
     runs-on: windows-2022
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
@@ -155,7 +155,11 @@ jobs:
           if ($process.ExitCode -ne 0) { throw 'Disclosure preview failed' }
           $report = Get-Content -LiteralPath $reportPath -Raw | ConvertFrom-Json
           if (!$report.success -or $report.consent_default -or $report.services_modified) { throw 'Unexpected disclosure preview result' }
+      - name: Verify real LocalService application on the disposable runner
+        shell: pwsh
+        run: python tools/ci_windows_service.py --source "$env:RUNNER_TEMP/extract-test/OwnDesk" --metadata "$env:RUNNER_TEMP/payload/release.json" --output "$env:RUNNER_TEMP/installer/service-acceptance.json"
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
         with:
           name: windows-installer-unsigned-${{ github.sha }}
           path: |
