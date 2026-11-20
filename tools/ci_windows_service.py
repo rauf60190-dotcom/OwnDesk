@@ -142,6 +142,20 @@ def main():
         (data / 'crash-request').touch()
         third = ready(second['starts'] + 1)
         result.update(automatic_recovery_verified=True, starts=third['starts'])
+        checkpoint('checking-online-backup-and-quarantined-restore')
+        backup = data.with_name(identity + 'Backup')
+        if backup.exists(): raise ValueError('Use a fresh backup directory')
+        service.secure_directory(backup, admin_only=True)
+        backup_report = output.with_name('backup-recovery.json')
+        try:
+            service.execute([python, '-B', source / 'tools/ci_backup_recovery.py', '--app', app,
+                '--data', data, '--backup', backup, '--cache', runner_temp / 'owndesk-vendor-cache',
+                '--output', backup_report], lambda _: None)
+        finally:
+            if backup_report.exists():
+                result['backup_recovery'] = json.loads(backup_report.read_text())
+        assert result['backup_recovery']['success']
+        result['backup_recovery_verified'] = True
         checkpoint('application-checks-passed', application_checks_passed=True)
     except Exception as error:
         checkpoint('failed', error_type=type(error).__name__)

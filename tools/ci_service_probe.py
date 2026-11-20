@@ -32,7 +32,30 @@ with ExitStack() as stack:
     runtime.command([*manage, 'check', '--deploy', '--fail-level', 'WARNING'], env)
     runtime.command([*manage, 'prepare_installation', '--output', data / 'installation-code.txt'], env)
     from apps.workspaces.models import Workspace
-    Workspace.objects.get_or_create(name='Isolated CI organization — synthetic data')
+    workspace, _ = Workspace.objects.get_or_create(name='Isolated CI organization — synthetic data')
+    from apps.teams.models import Team
+    from apps.conversations.models import Conversation, Message
+    from apps.tickets.models import Ticket
+    from apps.attachments.models import Attachment
+    team, _ = Team.objects.get_or_create(workspace=workspace, name='Synthetic CI support')
+    conversation, _ = Conversation.objects.get_or_create(workspace=workspace, title='Synthetic backup conversation')
+    ticket, _ = Ticket.objects.get_or_create(workspace=workspace, number=1, defaults={
+        'team': team, 'conversation': conversation, 'subject': 'Synthetic backup ticket',
+        'description': 'Snapshot before the later live update'})
+    message, _ = Message.objects.get_or_create(workspace=workspace, conversation=conversation,
+        ticket=ticket, text='Synthetic CI message; no customer or integration', direction='inbound')
+    for name, content in [('note.txt', b'OwnDesk synthetic backup note\n'),
+                          ('attachment.bin', bytes(range(256)) * 64)]:
+        key = 'ci-fixtures/' + name
+        path = data / 'private-attachments' / key
+        path.parent.mkdir(parents=True, exist_ok=True)
+        if path.exists():
+            assert path.read_bytes() == content
+        else:
+            with path.open('xb') as stream: stream.write(content)
+        Attachment.objects.get_or_create(workspace=workspace, object_key=key, defaults={
+            'message': message, 'filename': name, 'size': len(content),
+            'mime_type': 'application/octet-stream', 'state': 'ready'})
     api = runtime.launch(stack, data, 'api', [*manage, 'run_native', '--port', '18000'], env)
     config = (runtime.ROOT / 'infra/Caddyfile.connector').read_text()
     config = config.replace('{\n', '{\n    admin off\n    persist_config off\n', 1)
