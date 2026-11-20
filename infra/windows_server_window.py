@@ -12,6 +12,7 @@ import windows_service as service
 import windows_update_ui as updater
 import windows_recovery_ui as recovery
 import windows_uninstall_ui as removal
+import resource_requirements
 
 BG, PANEL, TEXT, MUTED, FIELD = '#0b1220', '#111d30', '#f0f5ff', '#a8b9d2', '#08101d'
 
@@ -111,6 +112,11 @@ class InstallerWindow:
         self.label(page, 'Новая организация • PostgreSQL • защищённый адрес', font=('Segoe UI', 13, 'bold')).pack(anchor='w', pady=(8, 14))
         self.label(page, 'Код подключения потребуется после подготовки компонентов.\nПолучите свежий код в разделе «Мои установки» на owndesk.work.', fg=MUTED, wraplength=810).pack(anchor='w', pady=(0, 18))
         self.label(page, 'Служба будет работать после закрытия окна. Для первого запуска нужны интернет и несколько минут.', fg=MUTED, wraplength=810).pack(anchor='w', pady=(0, 18))
+        self.label(page, resource_requirements.RECOMMENDATION, font=('Segoe UI', 10, 'bold'), wraplength=810).pack(anchor='w', pady=(0, 6))
+        resource_summary, resource_advice = resource_requirements.describe(resource_requirements.collect())
+        self.label(page, resource_summary, fg=MUTED, wraplength=810).pack(anchor='w', pady=(0, 4))
+        self.label(page, resource_advice + ' Вложения и резервные копии требуют дополнительного места.', fg=MUTED,
+                   font=('Segoe UI', 9), wraplength=810).pack(anchor='w', pady=(0, 14))
         actions = tk.Frame(page, bg=PANEL)
         actions.pack(fill='x')
         self.install = self.button(actions, 'Установить и запустить', lambda: self.start_install('install'), primary=True)

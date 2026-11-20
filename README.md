@@ -1,5 +1,7 @@
 # OwnDesk
 
+Перед установкой: [рекомендации по компьютеру сервера](docs/HARDWARE-REQUIREMENTS.md). Сервер устанавливается один раз для организации; сотрудники работают через браузер.
+
 [Code signing policy](docs/CODE-SIGNING-POLICY.md) — статус подписи, сборок и одобрения выпусков.
 
 Собственный код — [MIT](LICENSE); [сторонние лицензии](LICENSING.md) сохраняют свои условия. [Сборка из исходников](docs/SOURCE-DEVELOPMENT.md), [сообщения об уязвимостях](SECURITY.md), [автоматические проверки](https://github.com/rauf60190-dotcom/OwnDesk/actions/workflows/verify.yml). Windows-подпись пока не подключена; изменения исходного кандидата ещё не входят в опубликованный 0.4.43.

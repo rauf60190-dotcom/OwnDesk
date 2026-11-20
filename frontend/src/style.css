@@ -2623,6 +2623,9 @@ dialog.media-dialog { position:fixed; inset:0; width:min(1160px,96vw); height:92
 .owner-portal .portal-download { display: inline-flex; align-items: center; gap: 10px; background: #a4bfff; color: #112342; padding: 12px 20px; }
 .owner-portal .owner-note { font-size: 12px; line-height: 1.8; color: var(--muted); }
 .owner-release-meta { font-size: 12px; }
+.owner-hardware { margin: 18px 0; padding: 16px; border: 1px solid #304b73; border-radius: 12px; background: #132139; }
+.owner-hardware h3 { margin: 0 0 8px; }
+.owner-hardware p { margin: 8px 0 0; }
 .owner-install-steps { padding-left: 20px; color: var(--muted); line-height: 1.8; }
 .owner-install-steps li { padding-left: 4px; margin-bottom: 12px; }
 .owner-portal code { overflow-wrap: anywhere; white-space: normal; color: #c5d5f5; font-size: 12px; }
