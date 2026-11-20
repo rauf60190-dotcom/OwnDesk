@@ -156,9 +156,34 @@ def launch(stack, data, name, args, env, *, stop=True):
     return process
 
 
+def check_postgres_client(binaries, env):
+    """Fail before starting PostgreSQL if its management/client libraries cannot load."""
+    suffix = ".exe" if os.name == "nt" else ""
+    probes = (
+        ("pg_ctl", [binaries / ("pg_ctl" + suffix), "--version"]),
+        ("psycopg/libpq", [sys.executable, "-c", "from psycopg import pq; pq.version()"]),
+    )
+    for component, args in probes:
+        try:
+            result = subprocess.run([str(arg) for arg in args], env=env, cwd=ROOT / "backend",
+                                    stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
+                                    stderr=subprocess.DEVNULL, timeout=15,
+                                    creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0)
+        except (OSError, subprocess.TimeoutExpired):
+            raise RuntimeError("PostgreSQL client preflight failed: " + component
+                               + "; database was not started") from None
+        if result.returncode:
+            code = result.returncode & 0xFFFFFFFF
+            detail = ("Windows Code Integrity blocked a required library" if code == 0xC0E90002
+                      else "client could not start or load its libraries")
+            raise RuntimeError(f"PostgreSQL client preflight failed: {component}; {detail} "
+                               f"(0x{code:08X}); database was not started")
+
+
 def managed_database(stack, data, pg, secret, env):
     suffix = ".exe" if os.name == "nt" else ""
     binaries = (ROOT / pg["bin"]).resolve()
+    check_postgres_client(binaries, env)
     cluster = data / "pgdata"
     if not (cluster / "PG_VERSION").exists():
         password_file = data / (".initdb-" + secrets.token_hex(8))

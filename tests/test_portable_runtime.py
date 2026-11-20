@@ -1,5 +1,8 @@
 import importlib.util
 import json
+from contextlib import ExitStack
+import subprocess
+from types import SimpleNamespace
 from pathlib import Path
 from unittest.mock import patch
 from uuid import uuid4
@@ -10,6 +13,42 @@ import pytest
 spec = importlib.util.spec_from_file_location("portable_runtime", Path(__file__).resolve().parents[1] / "infra/native_runtime.py")
 runtime = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(runtime)
+
+
+@pytest.mark.parametrize('failed_probe', [0, 1])
+def test_managed_database_does_not_start_or_initialize_when_client_is_blocked(tmp_path, failed_probe):
+    results = [SimpleNamespace(returncode=0)] * failed_probe + [SimpleNamespace(returncode=-1058471934)]
+    private_env = {'POSTGRES_ADMIN_PASSWORD': 'must-not-be-logged'}
+    with ExitStack() as stack, patch.object(runtime.subprocess, 'run', side_effect=results) as run, \
+         patch.object(runtime, 'launch') as launch:
+        with pytest.raises(RuntimeError, match='Windows Code Integrity') as error:
+            runtime.managed_database(stack, tmp_path, {'bin': str(tmp_path / 'bin')}, {}, private_env)
+        assert 'must-not-be-logged' not in str(error.value)
+        assert '0xC0E90002' in str(error.value)
+        launch.assert_not_called()
+        assert list(tmp_path.iterdir()) == []
+        assert run.call_count == failed_probe + 1
+
+
+@pytest.mark.parametrize('error', [FileNotFoundError('private-path'), subprocess.TimeoutExpired('private-command', 15)])
+def test_postgres_preflight_reports_unavailable_client_without_disclosing_exception(tmp_path, error):
+    with patch.object(runtime.subprocess, 'run', side_effect=error):
+        with pytest.raises(RuntimeError, match='database was not started') as caught:
+            runtime.check_postgres_client(tmp_path, {})
+    assert 'private-' not in str(caught.value)
+
+
+def test_postgres_preflight_loads_actual_client_in_separate_bounded_process(tmp_path):
+    with patch.object(runtime.subprocess, 'run', return_value=SimpleNamespace(returncode=0)) as run:
+        runtime.check_postgres_client(tmp_path, {'PATH': 'client-path'})
+    assert run.call_count == 2
+    assert run.call_args_list[0].args[0][-1] == '--version'
+    assert run.call_args_list[1].args[0][0] == runtime.sys.executable
+    for call in run.call_args_list:
+        assert call.kwargs['timeout'] == 15
+        assert call.kwargs['stdin'] == subprocess.DEVNULL
+        assert call.kwargs['stdout'] == subprocess.DEVNULL
+        assert call.kwargs['stderr'] == subprocess.DEVNULL
 
 
 def test_prepare_preserves_pending_identity_and_never_stores_tunnel_token(tmp_path):

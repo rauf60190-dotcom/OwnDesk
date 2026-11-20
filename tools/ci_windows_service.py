@@ -98,6 +98,14 @@ def main():
         checkpoint('preparing-components')
         python, tools, _ = service.prepare_application(app, data, lambda _: None,
             cache=runner_temp / 'owndesk-vendor-cache', service_id=identity)
+        checkpoint('verifying-postgresql-publisher-signatures')
+        signature_report = output.with_name('postgresql-signatures.json')
+        service.execute(['powershell.exe', '-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass',
+            '-File', source / 'tools/verify_windows_postgres_signatures.ps1',
+            '-PostgresRoot', tools['postgres_bin'].parent, '-Output', signature_report], lambda _: None)
+        signatures = json.loads(signature_report.read_text(encoding='utf-8-sig'))
+        assert signatures['success'] and signatures['files_checked'] > 0
+        result.update(postgresql_signatures_verified=True, postgresql_signed_files=signatures['files_checked'])
         verified = 0
         for part in ('backend', 'infra', 'frontend/dist'):
             for path in (source / part).rglob('*'):

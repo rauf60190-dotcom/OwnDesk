@@ -1,10 +1,10 @@
 {
   "postgresql": {
-    "version": "17.11-3",
-    "url": "https://get.enterprisedb.com/postgresql/postgresql-17.11-3-windows-x64-binaries.zip",
-    "sha256": "4b8db0930c38f6ef845db919551dedda3b6b845aeb0927b3d79a6e8e9e4537cf",
+    "version": "17.12-1",
+    "url": "https://get.enterprisedb.com/postgresql/postgresql-17.12-1-windows-x64-binaries.zip",
+    "sha256": "a2cd8a774389347b70be7748ac4a37ef43cb6ee539c5fc3e85ae264b15e4a04c",
     "filename": "postgresql.zip",
-    "size": 341325378
+    "size": 386263884
   },
   "caddy": {
     "version": "2.10.2",

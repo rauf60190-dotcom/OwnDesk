@@ -1,0 +1,1741 @@
+{
+  "status": "notices-collected-review-required",
+  "complete_native_sbom": false,
+  "components": [
+    {
+      "name": "postgresql",
+      "version": "17.11-3",
+      "download_url": "https://get.enterprisedb.com/postgresql/postgresql-17.11-3-windows-x64-binaries.zip",
+      "download_sha256": "4b8db0930c38f6ef845db919551dedda3b6b845aeb0927b3d79a6e8e9e4537cf",
+      "pinned_download_verified": true,
+      "notices": [
+        {
+          "source_in_archive": "pgsql/commandlinetools_3rd_party_licenses.txt",
+          "path": "postgresql/66a4120132fc-commandlinetools_3rd_party_licenses.txt",
+          "sha256": "67181bbd5ddb5a0094aa9c82b97536a27811461a3b61c3c11588a2731cfc7b3b"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin_3rd_party_licenses.txt",
+          "path": "postgresql/869c2d9ddea5-pgAdmin_3rd_party_licenses.txt",
+          "sha256": "55ca29d7f2b5a4c54506108d98c0738f7e74d563e23c7f291cf335aed693f3b1"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin_license.txt",
+          "path": "postgresql/f0006655e864-pgAdmin_license.txt",
+          "sha256": "9362b3b64b44ed62ee8a1bc8f6a3b9d3b34abb36a2995f71d52ba91b54d762c8"
+        },
+        {
+          "source_in_archive": "pgsql/server_license.txt",
+          "path": "postgresql/0f65e148c68b-server_license.txt",
+          "sha256": "39294f3f5b41533b307e118ee37c356f32cbc7746fc97e8b91f1b49a9068a24e"
+        },
+        {
+          "source_in_archive": "pgsql/StackBuilder_3rd_party_licenses.txt",
+          "path": "postgresql/fc72c4339ac9-StackBuilder_3rd_party_licenses.txt",
+          "sha256": "e9bf83891be5b034c8fbe5cd219558cde26edc7da5deab76ddf9ed3d56c3d313"
+        },
+        {
+          "source_in_archive": "pgsql/doc/src/sgml/html/libpq-notice-processing.html",
+          "path": "postgresql/d5023fb5026c-libpq-notice-processing.html",
+          "sha256": "812d124c0155909150529134fbae84a2db455c86b3cbbc99e17b65026312b288"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/docs/en_US/html/licence.html",
+          "path": "postgresql/09acd3959463-licence.html",
+          "sha256": "1f4756809e1b2c2e75906541292034cdb6cb08588af78a5993f7d20912240548"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/docs/en_US/html/.doctrees/licence.doctree",
+          "path": "postgresql/e5aeb0e0a7d3-licence.doctree",
+          "sha256": "87a57cef24952ee3df225bede95cdd2a4fbe47e7345b0c6edb32dd160a0c3395"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/LICENSE.txt",
+          "path": "postgresql/ff130364ab22-LICENSE.txt",
+          "sha256": "62bec384df47b0328307db41455ff6ea2559e5546b394ac69148561b21703120"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/alembic-1.19.1.dist-info/licenses/LICENSE",
+          "path": "postgresql/f50825a94535-LICENSE",
+          "sha256": "6e68d94a03a0e3e327ddf3e86d1ebedc14eece3922022618fc246a36296fd0cc"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/annotated_doc-0.0.5.dist-info/licenses/LICENSE",
+          "path": "postgresql/af8bc1f42f13-LICENSE",
+          "sha256": "fff170779a6acbf65abdb405c087f1cee1786691e4a96a4034517e4a504a0cdf"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/authlib-1.7.2.dist-info/licenses/LICENSE",
+          "path": "postgresql/713cfcd588b6-LICENSE",
+          "sha256": "8e1b48518de9c6cd00cb48c7fe5b8023fd90d5552ca12ebe7362a0df30ddbe45"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/azure_common-1.1.28.dist-info/LICENSE",
+          "path": "postgresql/e49f2dd1cb36-LICENSE",
+          "sha256": "7c77a44a8acd9b41fdc209864a8016b3d430b5d0e09309818d5b7444336df744"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/azure_core-1.41.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/605f857199a0-LICENSE",
+          "sha256": "7c77a44a8acd9b41fdc209864a8016b3d430b5d0e09309818d5b7444336df744"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/azure_identity-1.25.3.dist-info/licenses/LICENSE",
+          "path": "postgresql/19ceb953cf8e-LICENSE",
+          "sha256": "7c77a44a8acd9b41fdc209864a8016b3d430b5d0e09309818d5b7444336df744"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/azure_mgmt_core-1.6.0.dist-info/LICENSE",
+          "path": "postgresql/f01fe1834442-LICENSE",
+          "sha256": "fd532481d828e13a0b13ccb598e02338a3617740675a862ee6bdc1541b68e93d"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/azure_mgmt_core-1.6.0.dist-info/LICENSE.md",
+          "path": "postgresql/b9fe504f79b6-LICENSE.md",
+          "sha256": "3ddf94ff30731168a1d9b3f72c4364136edbd1726a78b84f441c30f36ec685d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/azure_mgmt_rdbms-10.1.1.dist-info/licenses/LICENSE",
+          "path": "postgresql/4499d0642382-LICENSE",
+          "sha256": "7c77a44a8acd9b41fdc209864a8016b3d430b5d0e09309818d5b7444336df744"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/azure_mgmt_resource-25.0.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/486b8ca8e8ba-LICENSE",
+          "sha256": "7c77a44a8acd9b41fdc209864a8016b3d430b5d0e09309818d5b7444336df744"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/azure_mgmt_subscription-3.1.1.dist-info/LICENSE",
+          "path": "postgresql/368175e65dea-LICENSE",
+          "sha256": "7c77a44a8acd9b41fdc209864a8016b3d430b5d0e09309818d5b7444336df744"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/babel/locale-data/LICENSE.unicode",
+          "path": "postgresql/07d600f873b0-LICENSE.unicode",
+          "sha256": "b4c0ae8ef04f7059f96ce5bbe0467f9fe6f6d81bbe13517701dfeb961fb4d0b6"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/babel-2.18.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/db018848ca5a-LICENSE",
+          "sha256": "86bad5758c7859ba06251f8f12eee885eca31369923dfb2b87a7c13c3634d870"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/backports_zstd-1.7.0.dist-info/licenses/LICENSE_zstd.txt",
+          "path": "postgresql/abbbcb786d51-LICENSE_zstd.txt",
+          "sha256": "836cbda972f74261a12b706adaa7c73daea536ea9640c9a0dcb77b68105be051"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/backports_zstd-1.7.0.dist-info/licenses/LICENSE.txt",
+          "path": "postgresql/734bbb26b1ed-LICENSE.txt",
+          "sha256": "b0e25a78cffb43f4d92de8b61ccfa1f1f98ecbc22330b54b5251e7b6ba010231"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/bcrypt-5.0.0.dist-info/LICENSE",
+          "path": "postgresql/12b0cd74ba8e-LICENSE",
+          "sha256": "8173d5c29b4f956d532781d2b86e4e30f83e6b7878dce18c919451d6ba707c90"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/bidict-0.24.1.dist-info/licenses/LICENSE",
+          "path": "postgresql/e744eb925b59-LICENSE",
+          "sha256": "099b9dcb04485b32cf93aba82b303e099bcf98ab2476fae716d22c930fd6b915"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/blinker-1.9.0.dist-info/LICENSE.txt",
+          "path": "postgresql/b19abcf9f86d-LICENSE.txt",
+          "sha256": "9eb73a1f38597a4aa17025d2ae1be3839624c795e985d4f0e9769ce29faca467"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/boto3-1.43.83.dist-info/LICENSE",
+          "path": "postgresql/529dcc5cc5f7-LICENSE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/boto3-1.43.83.dist-info/NOTICE",
+          "path": "postgresql/f05e2597ae4f-NOTICE",
+          "sha256": "04fb1e61484a7810f1ba09bb42bc01ca58c9af33927d7c5a21556e4c4d1c7fa4"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/botocore-1.43.83.dist-info/LICENSE.txt",
+          "path": "postgresql/dd06ca714149-LICENSE.txt",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/botocore-1.43.83.dist-info/NOTICE",
+          "path": "postgresql/2938650381ea-NOTICE",
+          "sha256": "1d1c5a6f3d68cb11f4fad1afa86a7450d0286f15c176ef0ea048f255b46d95b0"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/brotli-1.2.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/9d658b8d39e9-LICENSE",
+          "sha256": "60ae0f13e76cc2eaaa108677eefa4ce16b647f6bbe8cf0a1ac9429d82eca7248"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/certifi-2026.6.17.dist-info/licenses/LICENSE",
+          "path": "postgresql/c4e2d067f9f6-LICENSE",
+          "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/cffi-2.1.1.dist-info/licenses/LICENSE",
+          "path": "postgresql/237fc98c7602-LICENSE",
+          "sha256": "5ba24ddc57067f9249add644c3afc41a5d6dc37e23433ef759d95df370b0af63"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/charset_normalizer-3.5.1.dist-info/licenses/LICENSE",
+          "path": "postgresql/a98a201068c2-LICENSE",
+          "sha256": "18577485d3704f1a479ded8e573c0976cfed315fd2fd17983fa988da4c2f70d1"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/click-8.5.0.dist-info/licenses/LICENSE.txt",
+          "path": "postgresql/6b88e24dc0a1-LICENSE.txt",
+          "sha256": "9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/colorama-0.4.6.dist-info/licenses/LICENSE.txt",
+          "path": "postgresql/efcd6cbf4a93-LICENSE.txt",
+          "sha256": "cac35c02686e5d04a5a7140bfb3b36e73aed496656e891102e428886d7930318"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/cryptography-49.0.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/823bc7c73566-LICENSE",
+          "sha256": "3e0c7c091a948b82533ba98fd7cbb40432d6f1a9acbf85f5922d2f99a93ae6bb"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/cryptography-49.0.0.dist-info/licenses/LICENSE.APACHE",
+          "path": "postgresql/0624bd088861-LICENSE.APACHE",
+          "sha256": "aac73b3148f6d1d7111dbca32099f68d26c644c6813ae1e4f05f6579aa2663fe"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/cryptography-49.0.0.dist-info/licenses/LICENSE.BSD",
+          "path": "postgresql/b21146969195-LICENSE.BSD",
+          "sha256": "602c4c7482de6479dd2e9793cda275e5e63d773dacd1eca689232ab7008fb4fb"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/decorator-5.3.1.dist-info/licenses/LICENSE.txt",
+          "path": "postgresql/e5446a1fea48-LICENSE.txt",
+          "sha256": "bd12cc51405c10872497c10ca21601f1d4abc50496595cc89e89ab5dad24fb62"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/distlib-0.4.3.dist-info/licenses/LICENSE.txt",
+          "path": "postgresql/47b65e8121a6-LICENSE.txt",
+          "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/dnspython-2.8.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/0631bd5aee2d-LICENSE",
+          "sha256": "c3ea3ff5654b329c19d3bc5f7481af623c3dded4a6145585499f843ad3d741cd"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/email_validator-2.3.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/11fef8e6cc4c-LICENSE",
+          "sha256": "672179752e109134a3fb2bdd0780b29fdb7a03974f0f586a13aead5129562d4c"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/filelock-3.32.4.dist-info/licenses/LICENSE",
+          "path": "postgresql/40c1a9172f2d-LICENSE",
+          "sha256": "608c89d5060ae9921adccf3236695bc654a9946e12323ef6c021dfa04e294d48"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/flask-3.1.3.dist-info/licenses/LICENSE.txt",
+          "path": "postgresql/101980ca221d-LICENSE.txt",
+          "sha256": "489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/flask_babel-4.0.0.dist-info/LICENSE",
+          "path": "postgresql/532b5648ec8c-LICENSE",
+          "sha256": "a526100a7047237360a394ba4f70ae801b50ff9b8c9b9e73e7795480a59f6b7e"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/flask_compress-1.24.dist-info/licenses/LICENSE.txt",
+          "path": "postgresql/9a4837d67290-LICENSE.txt",
+          "sha256": "a19e75a2c6ab5168e1c0f185f6d14b4f0130cd926511b88f3382833a211e2269"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/Flask_Login-0.6.3.dist-info/LICENSE",
+          "path": "postgresql/20beb2fefe2f-LICENSE",
+          "sha256": "7a9dfb9c5da204ed1370f3b62c13e2992a12da1da707f47e156897eeb4344e5b"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/flask_mail-0.10.0.dist-info/LICENSE.txt",
+          "path": "postgresql/16bfd12fe36f-LICENSE.txt",
+          "sha256": "3631b1ee0d72c703622605302e243d15bc7832d9a5835df2f854f0d29939cbc3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/Flask_Migrate-4.1.0.dist-info/LICENSE",
+          "path": "postgresql/b38f2bc8601b-LICENSE",
+          "sha256": "91f9171a5250bcacb763fffab4027cca7229d4741f79139784bf23654d5df832"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/Flask_Paranoid-0.3.0.dist-info/LICENSE",
+          "path": "postgresql/fa832d35f5d3-LICENSE",
+          "sha256": "06833ff8f1bf1a2fd3dbe1e7cdc7db44dc4f028a44a1a8232c2f2d3945eb5e82"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/flask_security/templates/security/email/change_notice.html",
+          "path": "postgresql/03399c5f6855-change_notice.html",
+          "sha256": "ee988d7c30adc0bf028791bade44a48de27174de816b9f9c5b39054def2eba08"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/flask_security/templates/security/email/change_notice.txt",
+          "path": "postgresql/319879c3440b-change_notice.txt",
+          "sha256": "1e572498fbc4a452f295d103d44c982716d02fce05d553ab91c2de0db09addd2"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/flask_security/templates/security/email/change_username_notice.html",
+          "path": "postgresql/768c9eb074fa-change_username_notice.html",
+          "sha256": "dc47bcf381472541afef5c1f0fd7245bcb771dbd8a74be60e911a27ca4d8db37"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/flask_security/templates/security/email/change_username_notice.txt",
+          "path": "postgresql/853cc0e3c31d-change_username_notice.txt",
+          "sha256": "10d221ae2e65c7bb357cd2e66f167888fb03fefb5879e515ef1c4097ef430480"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/flask_security/templates/security/email/reset_notice.html",
+          "path": "postgresql/2083e7cf122c-reset_notice.html",
+          "sha256": "4cb4bf075778ba0ee53bd96468aa5bde79da889a74f7edc48a171ed3a0c932e6"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/flask_security/templates/security/email/reset_notice.txt",
+          "path": "postgresql/5dd3ba2d13cf-reset_notice.txt",
+          "sha256": "4363ecdf4668cd9590a2dd74c85523317b7cd132ec837ef56106dba0c1ee9a9a"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/flask_security_too-5.8.2.dist-info/licenses/LICENSE.txt",
+          "path": "postgresql/d0bcdba81047-LICENSE.txt",
+          "sha256": "a7a0e4f8c5a261b49208f8b34a2854a087d2ce1df24f09f470854595ba2f85fa"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/flask_socketio-5.6.1.dist-info/licenses/LICENSE",
+          "path": "postgresql/79c1c0e271a8-LICENSE",
+          "sha256": "68d0966e480a8d2fd3d5c26d002c996ef08cdfa2b15a77d0d0b593b9abee60a4"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/flask_sqlalchemy-3.1.1.dist-info/LICENSE.rst",
+          "path": "postgresql/3feed60be49e-LICENSE.rst",
+          "sha256": "489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/flask_wtf-1.3.0.dist-info/licenses/LICENSE.rst",
+          "path": "postgresql/e0305904da4f-LICENSE.rst",
+          "sha256": "d5f19036451578cb36eeef04c99ebf7d7ca2e70dcf043636519bc420e15a7c62"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/googleapis_common_protos-1.75.2.dist-info/licenses/LICENSE",
+          "path": "postgresql/fb6753247187-LICENSE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/google_api_core-2.34.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/08a2c3feb1f0-LICENSE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/google_api_python_client-2.199.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/7980fc215bc3-LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/google_auth-2.57.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/f7017a1ae246-LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/google_auth_httplib2-0.4.2.dist-info/licenses/LICENSE",
+          "path": "postgresql/f23c93cbb998-LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/google_auth_oauthlib-1.4.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/e4e49b18aefe-LICENSE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/greenlet-3.5.5.dist-info/licenses/LICENSE",
+          "path": "postgresql/67f7acaf1472-LICENSE",
+          "sha256": "ab977b654605670319509481ece49198f405a129372ac38c96f51cd96c2f452e"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/greenlet-3.5.5.dist-info/licenses/LICENSE.PSF",
+          "path": "postgresql/a8b5e788e803-LICENSE.PSF",
+          "sha256": "69efa689cc7aec7736236d3039c1d665e4b0c734a5bfea5abf633023abb2fff4"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/gssapi-1.11.1.dist-info/licenses/LICENSE.txt",
+          "path": "postgresql/5f1a42d04ef2-LICENSE.txt",
+          "sha256": "368813402a562f9d4fc3669fe8ec6cd6a7562de9afac826702af593bddb52c50"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/h11-0.16.0.dist-info/licenses/LICENSE.txt",
+          "path": "postgresql/0ec06c43c14a-LICENSE.txt",
+          "sha256": "37db5bb85926db28a427a25867f10b1232003aea1be69ccb851138adb8e6f361"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/httplib2-0.32.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/da80087aae47-LICENSE",
+          "sha256": "589eec38f72df2be203711d3b8cbece9b908c5e7ff00bc3cab7f63bae9e366b4"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/idna-3.19.dist-info/licenses/LICENSE.md",
+          "path": "postgresql/38b5a63906cd-LICENSE.md",
+          "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/isodate-0.7.2.dist-info/LICENSE",
+          "path": "postgresql/62329aa2a9d6-LICENSE",
+          "sha256": "ce5fe4893fb6ab843de77b367bfa9db974d7b00ab9033fcca8d7760a97fe1b43"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/itsdangerous-2.2.0.dist-info/LICENSE.txt",
+          "path": "postgresql/50b98a2963a9-LICENSE.txt",
+          "sha256": "63af09891b6be8ad1a4252ed43af0f4efba7fc948e228367bed7f3c5ae0b09d7"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/jaraco.classes-3.4.0.dist-info/LICENSE",
+          "path": "postgresql/eaa7fb3c5756-LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/jaraco_context-6.1.2.dist-info/licenses/LICENSE",
+          "path": "postgresql/d94c1b9425af-LICENSE",
+          "sha256": "9755a18519666e5f0f4cae3daad3d7012bcae48a600b31237d75e9fe134e6683"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/jaraco_functools-4.6.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/9ad7da32545e-LICENSE",
+          "sha256": "9755a18519666e5f0f4cae3daad3d7012bcae48a600b31237d75e9fe134e6683"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/jinja2-3.1.6.dist-info/licenses/LICENSE.txt",
+          "path": "postgresql/d86f59209217-LICENSE.txt",
+          "sha256": "3b49dcee4105eb37bac10faf1be260408fe85d252b8e9df2e0979fc1e094437b"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/jmespath-1.1.0.dist-info/LICENSE",
+          "path": "postgresql/4a8a3c65ce76-LICENSE",
+          "sha256": "6eefacfa4d71b82d08408c751470ac8d9854538da2142cb27be0287fb13d0ab9"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/joserfc-1.7.5.dist-info/licenses/LICENSE",
+          "path": "postgresql/a924d10d95d2-LICENSE",
+          "sha256": "19ee1fafcc9ec4217fc32b8a651d820538c789cf4041cb4e46b4b176a5f2a9c8"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/jsonformatter-0.3.4.dist-info/licenses/LICENSE",
+          "path": "postgresql/634a169c9c3c-LICENSE",
+          "sha256": "bbf3c8a8a54c570e6dcd62f1cb49c349ca71dea05e6edd28e4b836f88bd1d1e6"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/keyring-25.7.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/081b17ea2ef7-LICENSE",
+          "sha256": "5a57cb4db85e2a2dd88c290628908add57e3451449e0a9a71fdfb38776fd759d"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/ldap3-2.9.1.dist-info/COPYING.LESSER.txt",
+          "path": "postgresql/7d4d49e61307-COPYING.LESSER.txt",
+          "sha256": "2cf34ac038aee5ac06f933ddd1da9826e0bb9383c13d8e0b088fced0b4a95b5b"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/ldap3-2.9.1.dist-info/COPYING.txt",
+          "path": "postgresql/681cb7d54236-COPYING.txt",
+          "sha256": "996f83a099a509bf1d561787dd68130574fa691a0f20f73c1385a71d6c6942d5"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/ldap3-2.9.1.dist-info/LICENSE.txt",
+          "path": "postgresql/af2e14636098-LICENSE.txt",
+          "sha256": "5d7e57549f226a6d8f03b5095b7ba8dfb2ffc7e5fa79220fe65a3854c77159b0"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/libgravatar-1.0.4.dist-info/LICENSE",
+          "path": "postgresql/a1d694c5a6f9-LICENSE",
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/libpass-1.9.3.dist-info/licenses/LICENSE",
+          "path": "postgresql/f0187a25b93a-LICENSE",
+          "sha256": "a95ba8f1af88ff8d5f0d0c33519f430b7f9d8992b69d4bc369ac0423a7a05a89"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/mako-1.4.1.dist-info/licenses/LICENSE",
+          "path": "postgresql/653c3c0d9d7a-LICENSE",
+          "sha256": "8c1d171bc5d341ad9cd33d5e2c39b96a82c7bd49b3ae89a470c37e5822232054"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/markdown_it_py-4.2.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/4d64d504f035-LICENSE",
+          "sha256": "4a2260d6e2cd0f5a151a1e86dbfe7d3ed552b1e2beabf9941c1ba5c49cbce484"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/markdown_it_py-4.2.0.dist-info/licenses/LICENSE.markdown-it",
+          "path": "postgresql/de18dc541644-LICENSE.markdown-it",
+          "sha256": "792c48c5a849a15fdf9e37e8bcf9e6d1dd13b32b46c642a748a0a46a9919d473"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/markupsafe-3.0.3.dist-info/licenses/LICENSE.txt",
+          "path": "postgresql/a59d0e98596e-LICENSE.txt",
+          "sha256": "4631ec0db5fd90a547e336817264c6798214338146f8ac94b4a57f96ee8c9ec4"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/mdurl-0.1.2.dist-info/LICENSE",
+          "path": "postgresql/4a2424a6e3e0-LICENSE",
+          "sha256": "7c605df6e28667a9603118e98274f64a49ce3eed0d26fccce9534a345e0ef955"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/more_itertools-11.1.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/2f1cc7962e15-LICENSE",
+          "sha256": "09f1c8c9e941af3e584d59641ea9b87d83c0cb0fd007eb5ef391a7e2643c1a46"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/msal-1.38.0.dist-info/LICENSE",
+          "path": "postgresql/79fc233678ee-LICENSE",
+          "sha256": "a0fcbe4bd36e9df91a4b20954b8ce2bbe022ec801a76f472ef988aeea29f0460"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/msal_extensions-1.3.1.dist-info/LICENSE",
+          "path": "postgresql/ee15b66e667c-LICENSE",
+          "sha256": "dea9265341829002e2c23a7372393eb2ed6e26085fb623f38a4ba0af833f30a6"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/msrest-0.7.1.dist-info/LICENSE.md",
+          "path": "postgresql/0242f430102c-LICENSE.md",
+          "sha256": "3ddf94ff30731168a1d9b3f72c4364136edbd1726a78b84f441c30f36ec685d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/oauthlib-3.3.1.dist-info/licenses/LICENSE",
+          "path": "postgresql/7077ddbc2bd1-LICENSE",
+          "sha256": "0028aa4763a8a0b09ca4c68d585263474cf9aaa6ec69ffbef3a31a9eccdd3b91"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/paramiko-3.5.1.dist-info/LICENSE",
+          "path": "postgresql/d677d74df121-LICENSE",
+          "sha256": "5fa25bf5f395fd26e701c2e1de4ca7d162816986dc791c22f8f4226857ad1bb2"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/passlib-1.7.4.dist-info/LICENSE",
+          "path": "postgresql/d20d285c50e7-LICENSE",
+          "sha256": "a95ba8f1af88ff8d5f0d0c33519f430b7f9d8992b69d4bc369ac0423a7a05a89"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pillow-12.3.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/1c9ba653759a-LICENSE",
+          "sha256": "4f7866a74802c6326f81faff59a56546b6aec2b10b91973e0e9308de95e79857"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip/_vendor/cachecontrol/LICENSE.txt",
+          "path": "postgresql/8ff01866f7a6-LICENSE.txt",
+          "sha256": "86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip/_vendor/certifi/LICENSE",
+          "path": "postgresql/322a16624630-LICENSE",
+          "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip/_vendor/distlib/LICENSE.txt",
+          "path": "postgresql/a81d7eebef7a-LICENSE.txt",
+          "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip/_vendor/distro/LICENSE",
+          "path": "postgresql/844d7105fbb5-LICENSE",
+          "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip/_vendor/idna/LICENSE.md",
+          "path": "postgresql/65e7a90aea6f-LICENSE.md",
+          "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip/_vendor/msgpack/COPYING",
+          "path": "postgresql/dcb56bea2690-COPYING",
+          "sha256": "492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip/_vendor/packaging/LICENSE",
+          "path": "postgresql/82af89d2b863-LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip/_vendor/packaging/LICENSE.APACHE",
+          "path": "postgresql/ec1a0e6b2e26-LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip/_vendor/packaging/LICENSE.BSD",
+          "path": "postgresql/e920c5dac4d3-LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip/_vendor/pkg_resources/LICENSE",
+          "path": "postgresql/2d092e4fc42c-LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip/_vendor/platformdirs/LICENSE",
+          "path": "postgresql/06433d2675b8-LICENSE",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip/_vendor/pygments/LICENSE",
+          "path": "postgresql/7b1b93ba7b04-LICENSE",
+          "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip/_vendor/pyproject_hooks/LICENSE",
+          "path": "postgresql/5dadd252b3f6-LICENSE",
+          "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip/_vendor/requests/LICENSE",
+          "path": "postgresql/ac3f7d0c9fb1-LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip/_vendor/resolvelib/LICENSE",
+          "path": "postgresql/fea9990f88e4-LICENSE",
+          "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip/_vendor/rich/LICENSE",
+          "path": "postgresql/53b20c79b4b7-LICENSE",
+          "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip/_vendor/tomli/LICENSE",
+          "path": "postgresql/d3a1cc8de73e-LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip/_vendor/tomli_w/LICENSE",
+          "path": "postgresql/e025c1f498b1-LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip/_vendor/truststore/LICENSE",
+          "path": "postgresql/6908dec78c8d-LICENSE",
+          "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip/_vendor/urllib3/LICENSE.txt",
+          "path": "postgresql/1eff185da302-LICENSE.txt",
+          "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip-26.2.1.dist-info/licenses/LICENSE.txt",
+          "path": "postgresql/023b6030f5a7-LICENSE.txt",
+          "sha256": "634300a669d49aeae65b12c6c48c924c51a4cdf3d1ff086dc3456dc8bcaa2104"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/cachecontrol/LICENSE.txt",
+          "path": "postgresql/f04642b251b9-LICENSE.txt",
+          "sha256": "86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/certifi/LICENSE",
+          "path": "postgresql/a243644f965b-LICENSE",
+          "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/distlib/LICENSE.txt",
+          "path": "postgresql/7f641523d6e9-LICENSE.txt",
+          "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/distro/LICENSE",
+          "path": "postgresql/73ea0a03bf51-LICENSE",
+          "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/idna/LICENSE.md",
+          "path": "postgresql/cc5b3e6db73e-LICENSE.md",
+          "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/msgpack/COPYING",
+          "path": "postgresql/805346d58650-COPYING",
+          "sha256": "492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/packaging/LICENSE",
+          "path": "postgresql/ba84be02858b-LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/packaging/LICENSE.APACHE",
+          "path": "postgresql/01da1138b755-LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/packaging/LICENSE.BSD",
+          "path": "postgresql/f44bfe43eea0-LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/pkg_resources/LICENSE",
+          "path": "postgresql/662cb9070c06-LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/platformdirs/LICENSE",
+          "path": "postgresql/b0fdeb58ecce-LICENSE",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/pygments/LICENSE",
+          "path": "postgresql/2ac277d748ab-LICENSE",
+          "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/pyproject_hooks/LICENSE",
+          "path": "postgresql/6911d4771f5e-LICENSE",
+          "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/requests/LICENSE",
+          "path": "postgresql/4bc9ff50a36e-LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/resolvelib/LICENSE",
+          "path": "postgresql/7ed3cc1e1d59-LICENSE",
+          "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/rich/LICENSE",
+          "path": "postgresql/e09dba39a931-LICENSE",
+          "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/tomli/LICENSE",
+          "path": "postgresql/8e9246c8ff46-LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/tomli_w/LICENSE",
+          "path": "postgresql/778173c2472f-LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/truststore/LICENSE",
+          "path": "postgresql/c9f4f5ce1231-LICENSE",
+          "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pip-26.2.1.dist-info/licenses/src/pip/_vendor/urllib3/LICENSE.txt",
+          "path": "postgresql/0143ccfb2cd1-LICENSE.txt",
+          "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/platformdirs-4.11.5.dist-info/licenses/LICENSE",
+          "path": "postgresql/3e8b205470af-LICENSE",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/protobuf-7.36.0.dist-info/LICENSE",
+          "path": "postgresql/fb5af2669719-LICENSE",
+          "sha256": "6e5e117324afd944dcf67f36cf329843bc1a92229a8cd9bb573d7a83130fea7d"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/proto_plus-1.28.4.dist-info/licenses/LICENSE",
+          "path": "postgresql/c6306904af5d-LICENSE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/psutil-7.2.2.dist-info/LICENSE",
+          "path": "postgresql/49c3b5132272-LICENSE",
+          "sha256": "c7adc4d5d1337a548b967421f1fbe258b93033a0417708fd6f4e38f8ecbceb80"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/psycopg-3.3.4.dist-info/licenses/LICENSE.txt",
+          "path": "postgresql/d424b96345bc-LICENSE.txt",
+          "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/psycopg_c-3.3.4.dist-info/licenses/LICENSE.txt",
+          "path": "postgresql/ce82e0187e51-LICENSE.txt",
+          "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pyasn1-0.6.4.dist-info/licenses/LICENSE.rst",
+          "path": "postgresql/952a38d40104-LICENSE.rst",
+          "sha256": "2aad5fc00f705c4a1addb83eed10a6a75d286a3779f0cf8519d87e62bc4735fd"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pyasn1_modules-0.4.2.dist-info/licenses/LICENSE.txt",
+          "path": "postgresql/d440f25c8f74-LICENSE.txt",
+          "sha256": "2aad5fc00f705c4a1addb83eed10a6a75d286a3779f0cf8519d87e62bc4735fd"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pycparser-3.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/1250c630e003-LICENSE",
+          "sha256": "0c846399369ea76ddd7b5c44fe6d16497415fcf015f5cbb508c24bf98b81c5b1"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pygments-2.21.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/ed4354225156-LICENSE",
+          "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pyjwt-2.13.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/9eaf0852725f-LICENSE",
+          "sha256": "797a7a20231d4c433e9f1911db1731d06b5828b98f499819a034f7c0f56f5ce5"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pynacl-1.6.2.dist-info/licenses/LICENSE",
+          "path": "postgresql/8f693065439e-LICENSE",
+          "sha256": "77af5bbded959114b6d7a5eea518b2be364e04f4f4a95f9e87d9870c27713d24"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pynacl-1.6.2.dist-info/licenses/licenses/LICENSE.libsodium.txt",
+          "path": "postgresql/be5ad9210211-LICENSE.libsodium.txt",
+          "sha256": "93e7cac854d71cdafc9d9e4e9f8fd28d87ae541b3dda224d7c8fe23d37875704"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pyotp-2.10.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/2a47ade35956-LICENSE",
+          "sha256": "795885123341458172aad6ebfab31b071cc7b40524929e6901662d5dbbf57ea3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pyparsing-3.3.2.dist-info/licenses/LICENSE",
+          "path": "postgresql/77286deb1c99-LICENSE",
+          "sha256": "a5425f9dc14ac74d4c5f0b679e941f2442e32cca7452a4418d5b1a49893ebe4e"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/python_dateutil-2.9.0.post0.dist-info/LICENSE",
+          "path": "postgresql/b1d6a329138d-LICENSE",
+          "sha256": "ba00f51a0d92823b5a1cde27d8b5b9d2321e67ed8da9bc163eff96d5e17e577e"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/python_discovery-1.6.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/5a223a14a95e-LICENSE",
+          "sha256": "90e25e1faf2a4aaea8d95ee8e7f5738b052a1acc0c9c58068101f931a86bd588"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/python_engineio-4.14.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/ed56bce9ff1e-LICENSE",
+          "sha256": "c9e97d3dbc1fbbcdb4f7808b282cd646db887aff4f5313fe6bbe8d4c31405a9c"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/python_socketio-5.16.4.dist-info/licenses/LICENSE",
+          "path": "postgresql/0eb118e2a324-LICENSE",
+          "sha256": "c9e97d3dbc1fbbcdb4f7808b282cd646db887aff4f5313fe6bbe8d4c31405a9c"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pytz-2026.3.post1.dist-info/LICENSE.txt",
+          "path": "postgresql/6bf9124fa243-LICENSE.txt",
+          "sha256": "be8b1a37ebe26c592a90f6c0eb33103a7f383ce2f4d7498c0af9a526990a07b8"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pywin32_ctypes-0.2.3.dist-info/LICENSE.txt",
+          "path": "postgresql/fa1c9e8cfdea-LICENSE.txt",
+          "sha256": "dfa83b3e2709adfcdb838d9ad55823ca674abb780e60563d9dd9544ccbf785e9"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/pywinpty-2.0.15.dist-info/licenses/LICENSE.txt",
+          "path": "postgresql/60f1bef146d6-LICENSE.txt",
+          "sha256": "f878d4767f9ad2e43d3083efa00201b000ce937d9ee8626e00ba5c72aac951e2"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/qrcode-8.2.dist-info/LICENSE",
+          "path": "postgresql/9cb2229b3930-LICENSE",
+          "sha256": "40dfb903c94ee3f789500131311186548ecba5cefd3557623d7700e2522ab994"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/requests-2.34.2.dist-info/licenses/LICENSE",
+          "path": "postgresql/7ee7b378a16a-LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/requests-2.34.2.dist-info/licenses/NOTICE",
+          "path": "postgresql/e0b8a994a9ed-NOTICE",
+          "sha256": "f5110972dedad2b4e9d314518daf3b7d72d6e02e499acd802181de6f74571dcc"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/requests_oauthlib-2.0.0.dist-info/LICENSE",
+          "path": "postgresql/44004394ff6b-LICENSE",
+          "sha256": "ae01846afad8a8291fe6a08966f3015af9a8ff675d84b981f9793c122f7876e8"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/rich-15.0.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/54e4ada7c4b4-LICENSE",
+          "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/s3transfer-0.19.2.dist-info/LICENSE.txt",
+          "path": "postgresql/ccebdfd4980a-LICENSE.txt",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/s3transfer-0.19.2.dist-info/NOTICE.txt",
+          "path": "postgresql/dc5322e73c3d-NOTICE.txt",
+          "sha256": "d8354e0fa7fb762da7bc054a8a6774a0b310dfbbc78006393ee573a0e57612b5"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/setuptools/config/NOTICE",
+          "path": "postgresql/0362c65b13e8-NOTICE",
+          "sha256": "2dddf08818297a3b89d43d95ff659d8da85741108c9136dfa3a4d856c0623bd8"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/setuptools/config/_validate_pyproject/NOTICE",
+          "path": "postgresql/01698d75e69e-NOTICE",
+          "sha256": "09c9bcea95ca086f8bc5bed174e40bc835b297d40fb5f86bbbb570fe0a5581a7"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/setuptools/_vendor/autocommand-2.2.2.dist-info/LICENSE",
+          "path": "postgresql/801eda9adbc5-LICENSE",
+          "sha256": "ade78d04982d69972d444a8e14a94f87a2334dd3855cc80348ea8e240aa0df2d"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/setuptools/_vendor/backports.tarfile-1.2.0.dist-info/LICENSE",
+          "path": "postgresql/0604c2665102-LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/setuptools/_vendor/importlib_metadata-8.7.1.dist-info/licenses/LICENSE",
+          "path": "postgresql/4c788c677261-LICENSE",
+          "sha256": "458502e12d97bbf64438606a20044aa85eb05fb0a8a807bb35dbec253fd1fc04"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/setuptools/_vendor/jaraco.text-4.0.0.dist-info/LICENSE",
+          "path": "postgresql/ffe79f978cd2-LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/setuptools/_vendor/jaraco_context-6.1.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/823239b90fdf-LICENSE",
+          "sha256": "9755a18519666e5f0f4cae3daad3d7012bcae48a600b31237d75e9fe134e6683"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/setuptools/_vendor/jaraco_functools-4.4.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/9c5d408f27eb-LICENSE",
+          "sha256": "5a57cb4db85e2a2dd88c290628908add57e3451449e0a9a71fdfb38776fd759d"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/setuptools/_vendor/more_itertools-10.8.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/09fa27e0ea37-LICENSE",
+          "sha256": "09f1c8c9e941af3e584d59641ea9b87d83c0cb0fd007eb5ef391a7e2643c1a46"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/setuptools/_vendor/packaging-26.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/787fb7d4cc14-LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/setuptools/_vendor/packaging-26.0.dist-info/licenses/LICENSE.APACHE",
+          "path": "postgresql/e6a00e6742f9-LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/setuptools/_vendor/packaging-26.0.dist-info/licenses/LICENSE.BSD",
+          "path": "postgresql/c5745ebd6ba6-LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/setuptools/_vendor/platformdirs-4.4.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/c4bde85cd41e-LICENSE",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/setuptools/_vendor/tomli-2.4.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/4fc0a1a3be7d-LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/setuptools/_vendor/wheel-0.46.3.dist-info/licenses/LICENSE.txt",
+          "path": "postgresql/f7f90046b28e-LICENSE.txt",
+          "sha256": "30c23618679108f3e8ea1d2a658c7ca417bdfc891c98ef1a89fa4ff0c9828654"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/setuptools/_vendor/zipp-3.23.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/404d0f5fca34-LICENSE",
+          "sha256": "5a57cb4db85e2a2dd88c290628908add57e3451449e0a9a71fdfb38776fd759d"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/setuptools-83.0.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/780649c1118f-LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/shellingham-1.5.4.dist-info/LICENSE",
+          "path": "postgresql/14f0851c41b3-LICENSE",
+          "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/simple_websocket-1.1.0.dist-info/LICENSE",
+          "path": "postgresql/63d9729ce38e-LICENSE",
+          "sha256": "4b8abadcc5e3dd29c71905b84952945699f0a7ba41e6af99eaba46faabe95bb7"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/six-1.17.0.dist-info/LICENSE",
+          "path": "postgresql/d1cc7dc4a63c-LICENSE",
+          "sha256": "4375ba20e2b9c6c4e7cad2940a628fd90e95cc3d50ee92aae755715d8ba1fbd0"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/sqlalchemy-2.0.52.dist-info/licenses/LICENSE",
+          "path": "postgresql/e1f2104d756d-LICENSE",
+          "sha256": "9bb754071e711cf75728b9051b170bfb8f9e3b879c08386c96a36989c42cd5f1"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/sqlparse-0.6.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/fcfcd30b3aae-LICENSE",
+          "sha256": "c1938235b80d39e93138eae89edc3af67e18ecbc40d266529fa57b2dce426310"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/sshtunnel-0.4.0.dist-info/LICENSE",
+          "path": "postgresql/c22dc65e42b2-LICENSE",
+          "sha256": "f950062cbd6ab2b64dbeffcd17a9ba85f83c978fa7e5351d709e926a453e3b99"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/typer/_click/LICENSE.txt",
+          "path": "postgresql/c5bec9b79022-LICENSE.txt",
+          "sha256": "9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/typer-0.26.8.dist-info/licenses/LICENSE",
+          "path": "postgresql/232645c30714-LICENSE",
+          "sha256": "58992cebcf8dfb6e40c4e2112ed12126c243666dca3912a3d78b7ecac4859d49"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/typing_extensions-4.16.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/b17edbb2f2d9-LICENSE",
+          "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/tzdata-2026.3.dist-info/licenses/LICENSE",
+          "path": "postgresql/50e21b8a2b40-LICENSE",
+          "sha256": "df58f69ea88683035d720b5375bcef0cf5aeaa98a1d098d572e0992c378deb46"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/tzdata-2026.3.dist-info/licenses/licenses/LICENSE_APACHE",
+          "path": "postgresql/804cc3570a42-LICENSE_APACHE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/ua_parser-1.0.2.dist-info/licenses/LICENSE",
+          "path": "postgresql/89f58d3dda48-LICENSE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/uritemplate-4.2.0.dist-info/licenses/LICENSE",
+          "path": "postgresql/7f98791dbc68-LICENSE",
+          "sha256": "3cfc9f01cdeec92900f228cf5677ffa57e7ed304c4263532bcad9cbd9969e46c"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/urllib3-2.7.0.dist-info/licenses/LICENSE.txt",
+          "path": "postgresql/4cb145a8ad68-LICENSE.txt",
+          "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/virtualenv-21.7.7.dist-info/licenses/LICENSE",
+          "path": "postgresql/78f3a6a09b1e-LICENSE",
+          "sha256": "5c15919378c5b2aaab7b19cea70d8cdc75f76879e32454e4c0399f8b71d171e9"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/werkzeug/debug/shared/ICON_LICENSE.md",
+          "path": "postgresql/6586306e6c1a-ICON_LICENSE.md",
+          "sha256": "0e103a6358149792707e0d0d14df518f8556213b7cb54c7422f7467f4bb1f7eb"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/werkzeug-3.1.8.dist-info/licenses/LICENSE.txt",
+          "path": "postgresql/6021b5dc65ad-LICENSE.txt",
+          "sha256": "3b49dcee4105eb37bac10faf1be260408fe85d252b8e9df2e0979fc1e094437b"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/wsproto-1.3.2.dist-info/licenses/LICENSE",
+          "path": "postgresql/f883555fdaa4-LICENSE",
+          "sha256": "c0329a8dbf3437b095f7f5cf4257d6bb855e07120cae8786586073ff7a699959"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/python/Lib/site-packages/wtforms-3.2.2.dist-info/licenses/LICENSE.rst",
+          "path": "postgresql/d1f8331870fa-LICENSE.rst",
+          "sha256": "cf40d60ff34f6b2b68a53d220f8b66567b5ac8dd1119b37b62fd15e9518fe59b"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/LICENSE",
+          "path": "postgresql/450543b74917-LICENSE",
+          "sha256": "5154e165bd6c2cc0cfbcd8916498c7abab0497923bafcd5cb07673fe8480087d"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/LICENSES.chromium.html",
+          "path": "postgresql/48748c5e5a37-LICENSES.chromium.html",
+          "sha256": "5d67aba37acc9e0e0a88546d940ed23f29ea3441aac7dd06dcc08a1b1c93b0a9"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/ajv/LICENSE",
+          "path": "postgresql/05292d55d0fd-LICENSE",
+          "sha256": "a05350a88e318e4f5f2c2a1ff1e2e88daa4dd38e6e78b71cccae422bdc762cc3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/ajv-formats/LICENSE",
+          "path": "postgresql/2efd842fdd01-LICENSE",
+          "sha256": "9df3bb69929a3b650ed73b3bfa1756725aaff0ac296461605753547004eafeaf"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/ansi-regex/license",
+          "path": "postgresql/c52018723fed-license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/ansi-styles/license",
+          "path": "postgresql/039fe7d6cbf5-license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/async-function/LICENSE",
+          "path": "postgresql/b0d043f09241-LICENSE",
+          "sha256": "eab1e270ad6ecc6fdd64f9c149e019633fb6e59b2445002cb33d14f93092c42f"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/async-generator-function/LICENSE",
+          "path": "postgresql/f3d3bffcb0d0-LICENSE",
+          "sha256": "eab1e270ad6ecc6fdd64f9c149e019633fb6e59b2445002cb33d14f93092c42f"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/asynckit/LICENSE",
+          "path": "postgresql/c19e8211ba89-LICENSE",
+          "sha256": "1953150d5d4b10c7542cee6f6e0c613b2682545233f069d75cfff1936386ce10"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/atomically/license",
+          "path": "postgresql/51660b1a6aac-license",
+          "sha256": "716bd9213ef82d9017ed813688703837aaa99fc56de205a7b97475d40056a500"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/axios/LICENSE",
+          "path": "postgresql/46393aa52f60-LICENSE",
+          "sha256": "82761059eaedacb3356803aea8a170d8298609f91b14fc32ee1bfb40d690183c"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/call-bind-apply-helpers/LICENSE",
+          "path": "postgresql/bc9c1bcf0c74-LICENSE",
+          "sha256": "5e325595b4ea8cfec3802f545b1def5d7b73e4a5b8e9ba63e32a320f67732292"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/cli-truncate/license",
+          "path": "postgresql/decd859b87ec-license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/combined-stream/License",
+          "path": "postgresql/f64f99761083-License",
+          "sha256": "47eb8ca82c798246774946d1be0f9aa08f025fa8325ced0947aeeb4c05fe5547"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/conf/license",
+          "path": "postgresql/b0d1f7636d41-license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/debounce-fn/license",
+          "path": "postgresql/7d438fbac4ae-license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/debug/LICENSE",
+          "path": "postgresql/d95c782c6bf9-LICENSE",
+          "sha256": "3a61c6c96caf5c1d9b623fb9b04c822b783dfcb78aa7e49c76a3f643e6ed7f95"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/delayed-stream/License",
+          "path": "postgresql/3156c2d73105-License",
+          "sha256": "47eb8ca82c798246774946d1be0f9aa08f025fa8325ced0947aeeb4c05fe5547"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/dot-prop/license",
+          "path": "postgresql/7fe36e08cef0-license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/dunder-proto/LICENSE",
+          "path": "postgresql/9c9faa469507-LICENSE",
+          "sha256": "2b770a704c15de238c3f622b01b0044ddd60b49ee30608ea6991ebf19db7a7a1"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/electron-context-menu/license",
+          "path": "postgresql/7b05f9a039f5-license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/electron-dl/license",
+          "path": "postgresql/e16e39c8372a-license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/electron-is-dev/license",
+          "path": "postgresql/85eb08da0ee5-license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/electron-store/license",
+          "path": "postgresql/d85de9888617-license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/emoji-regex/LICENSE-MIT.txt",
+          "path": "postgresql/c9d6d38e58c7-LICENSE-MIT.txt",
+          "sha256": "483acb265f182907d1caf6cff9c16c96f31325ed23792832cc5d8b12d5f88c8a"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/env-paths/license",
+          "path": "postgresql/4bab63b41a76-license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/es-define-property/LICENSE",
+          "path": "postgresql/05642b42c599-LICENSE",
+          "sha256": "5e325595b4ea8cfec3802f545b1def5d7b73e4a5b8e9ba63e32a320f67732292"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/es-errors/LICENSE",
+          "path": "postgresql/3dee5fce9b04-LICENSE",
+          "sha256": "5e325595b4ea8cfec3802f545b1def5d7b73e4a5b8e9ba63e32a320f67732292"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/es-object-atoms/LICENSE",
+          "path": "postgresql/e717518c7bde-LICENSE",
+          "sha256": "5e325595b4ea8cfec3802f545b1def5d7b73e4a5b8e9ba63e32a320f67732292"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/es-set-tostringtag/LICENSE",
+          "path": "postgresql/f70b2dbe6801-LICENSE",
+          "sha256": "1a3aeb1f1398bd697d57c3c585faadf59d825aca6e3162cd7eeb72ff76eb2466"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/escape-goat/license",
+          "path": "postgresql/e2b5c78460ec-license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/escape-string-regexp/license",
+          "path": "postgresql/149f31fcb7d9-license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/ext-list/license",
+          "path": "postgresql/5ef432807dce-license",
+          "sha256": "fdc43423b75a24876001d4e904946b178ab7f5546ebd50030e1d3ee3d6582eb4"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/ext-list/node_modules/mime-db/LICENSE",
+          "path": "postgresql/2786aea02789-LICENSE",
+          "sha256": "cc1dfd4dafa27271e8212cd3b274eeb3f262e40a6fdab36ddc3f9696f706f58b"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/ext-name/license",
+          "path": "postgresql/fc66886c1398-license",
+          "sha256": "fdc43423b75a24876001d4e904946b178ab7f5546ebd50030e1d3ee3d6582eb4"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/fast-deep-equal/LICENSE",
+          "path": "postgresql/1bc4634d5830-LICENSE",
+          "sha256": "7bf9b2de73a6b356761c948d0e9eeb4be6c1270bd04c79cd489c1e400ffdfc1a"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/fast-uri/LICENSE",
+          "path": "postgresql/66ea5e9530d2-LICENSE",
+          "sha256": "b010b0dfdfdb23d7396e03b82cd4621fc9bb8f95d6b0aea70b9c24e12074c786"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/follow-redirects/LICENSE",
+          "path": "postgresql/b606499bcd0b-LICENSE",
+          "sha256": "bfa8a54bb952ccda79f0f1889721d108f5b605babbb2b8a3705ffb52f4132eb7"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/form-data/License",
+          "path": "postgresql/b6617942a956-License",
+          "sha256": "e5b780d4f38d1d3328e3e53186c4e62d3fa149ea6f2bacd5de5ad0c30ac85343"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/function-bind/LICENSE",
+          "path": "postgresql/9df14796d213-LICENSE",
+          "sha256": "773e131a7684726005a7e4688a80b4620033bc08499bc1404dd1a1eb3bca725e"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/generator-function/LICENSE.md",
+          "path": "postgresql/45a3636a95d8-LICENSE.md",
+          "sha256": "1ac0263302bfb8eedc54a10a44175b0df51419306d5bc1539bfd7a7da121bd08"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/get-east-asian-width/license",
+          "path": "postgresql/1b12365dde88-license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/get-intrinsic/LICENSE",
+          "path": "postgresql/7c52df5f5b19-LICENSE",
+          "sha256": "39c5ec504cf6bd5cd782a7c695828e09189df79f5d94840e4f08feb97b9fd416"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/get-proto/LICENSE",
+          "path": "postgresql/588136cde70f-LICENSE",
+          "sha256": "be46ce1e3b0479af9ce82d22b465a6d7d2ff084fca0aaf3d54172da2b5eb5781"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/gopd/LICENSE",
+          "path": "postgresql/3c7763012c4d-LICENSE",
+          "sha256": "d90bf0a089da4cf43d644ed240a0b3825dcdb705e64e38371d56995a4cc9e4c5"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/has-symbols/LICENSE",
+          "path": "postgresql/e3f4f4007616-LICENSE",
+          "sha256": "206c1adcf206dc0031b11232f5b054ec5f1662407ab1ca415247921cab2068ab"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/has-tostringtag/LICENSE",
+          "path": "postgresql/4c582405c53b-LICENSE",
+          "sha256": "e2560e002e13281578c75c850061d9255c33d16d732939e8c2db64c2506642fa"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/hasown/LICENSE",
+          "path": "postgresql/f4b5f4a8d484-LICENSE",
+          "sha256": "bf9b0d665be2a689851eea667ca9f42066ea1d903b38349c51e6a44b2577680a"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/is-fullwidth-code-point/license",
+          "path": "postgresql/2db78ddaade0-license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/is-plain-obj/license",
+          "path": "postgresql/7e80db509187-license",
+          "sha256": "6fb9754611c20f6649f68805e8c990e83261f29316e29de9e6cedae607b8634c"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/json-schema-traverse/LICENSE",
+          "path": "postgresql/145bd15783ad-LICENSE",
+          "sha256": "7bf9b2de73a6b356761c948d0e9eeb4be6c1270bd04c79cd489c1e400ffdfc1a"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/json-schema-typed/LICENSE.md",
+          "path": "postgresql/4856ea77e34c-LICENSE.md",
+          "sha256": "bbe87b573c12bda5baf18742117330efa177e0886b3b0a278dacf8f236e1e129"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/math-intrinsics/LICENSE",
+          "path": "postgresql/aee0601702b4-LICENSE",
+          "sha256": "2b770a704c15de238c3f622b01b0044ddd60b49ee30608ea6991ebf19db7a7a1"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/mime-db/LICENSE",
+          "path": "postgresql/950507d23070-LICENSE",
+          "sha256": "cc1dfd4dafa27271e8212cd3b274eeb3f262e40a6fdab36ddc3f9696f706f58b"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/mime-types/LICENSE",
+          "path": "postgresql/0581efec5755-LICENSE",
+          "sha256": "71f83c4c0621102a56d9853812777b85751bce7e9726f686f5b056c1f8a4b0e6"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/mimic-function/license",
+          "path": "postgresql/540928ca6c2b-license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/ms/license.md",
+          "path": "postgresql/337888839084-license.md",
+          "sha256": "1662fae9b5314d11cf51284e2dcd1f006a354f7343f08712a730fcff9a359801"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/path-exists/license",
+          "path": "postgresql/6b134b47a00e-license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/proxy-from-env/LICENSE",
+          "path": "postgresql/d29cdcf66eac-LICENSE",
+          "sha256": "f55828df4b8752c48e765a806465b76a103e3cb363379c569b15a1df2ba2d79e"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/pupa/license",
+          "path": "postgresql/b75210f874eb-license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/require-from-string/license",
+          "path": "postgresql/3c5f890d29b0-license",
+          "sha256": "6ee0feb1f6ef996ff5a68600f8cf98909cf412d39ef3cdceaefd87d636fa1b7f"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/semver/LICENSE",
+          "path": "postgresql/c2f84d1dd79f-LICENSE",
+          "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/slice-ansi/license",
+          "path": "postgresql/965be88288f1-license",
+          "sha256": "c91d87c3bca16ab6d96d82da08edc54377d14b679547a331eecc4adef3c353c8"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/sort-keys/license",
+          "path": "postgresql/19ef8f3e8746-license",
+          "sha256": "6fb9754611c20f6649f68805e8c990e83261f29316e29de9e6cedae607b8634c"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/sort-keys-length/LICENSE.md",
+          "path": "postgresql/1e699c27e9b9-LICENSE.md",
+          "sha256": "a34365aea13b2962568b6e41a8db478cc0d80b8e3f74e0e4d8870ecf518b28b0"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/string-width/license",
+          "path": "postgresql/49fc81289774-license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/strip-ansi/license",
+          "path": "postgresql/bfecf676d1fc-license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/stubborn-fs/license",
+          "path": "postgresql/60e5bd000b9d-license",
+          "sha256": "d98bee8913f421380c0771121d2a58deaa806e4513581d02887c3f65b9ee558f"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/stubborn-utils/license",
+          "path": "postgresql/de9ac08be75b-license",
+          "sha256": "0cb826ec0d67e9918daeb89ac839aba3b85cfd7579ee96208b1d81bef46593fd"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/tagged-tag/license",
+          "path": "postgresql/5218250affc3-license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/type-fest/license-cc0",
+          "path": "postgresql/0e9c72889c31-license-cc0",
+          "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/type-fest/license-mit",
+          "path": "postgresql/b167f9fd4bf0-license-mit",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/uint8array-extras/license",
+          "path": "postgresql/ab53ce37c3e7-license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/unused-filename/license",
+          "path": "postgresql/0bdec510cce7-license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/runtime/resources/app/node_modules/when-exit/license",
+          "path": "postgresql/04053c6210e9-license",
+          "sha256": "d98bee8913f421380c0771121d2a58deaa806e4513581d02887c3f65b9ee558f"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/web/pgadmin/static/js/generated/72.chunk.js.LICENSE.txt",
+          "path": "postgresql/cf55ac9db41e-72.chunk.js.LICENSE.txt",
+          "sha256": "6f358215db5f12c366f2b7c525c6a71c2be3fbf63c43877b8d564ff6c03fb809"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/web/pgadmin/static/js/generated/app.bundle.js.LICENSE.txt",
+          "path": "postgresql/1c29d699be3b-app.bundle.js.LICENSE.txt",
+          "sha256": "f34c361aca4480906c101713f6380a6b78d5ce698e7332f155f14260c50b8b0d"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/web/pgadmin/static/js/generated/vendor.main.js.LICENSE.txt",
+          "path": "postgresql/af7c51904e7e-vendor.main.js.LICENSE.txt",
+          "sha256": "a463453b4018935c48892876a7c15c7de693d1a4ee1addb2c0759df47304cd36"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/web/pgadmin/static/js/generated/vendor.others.js.LICENSE.txt",
+          "path": "postgresql/72b4dfd08c71-vendor.others.js.LICENSE.txt",
+          "sha256": "3dc5329543c87a54d9baa533ce93b66e70b40eb4a50266e222a9fe9f2014e5c1"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/web/pgadmin/static/js/generated/vendor.react.js.LICENSE.txt",
+          "path": "postgresql/c3a02d57919d-vendor.react.js.LICENSE.txt",
+          "sha256": "c960fdf1953eda506c3ea9ec07a7ab0bef4482c50c675b5f0a157d18dc5b96fe"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/web/pgadmin/static/js/generated/vendor.sqleditor.js.LICENSE.txt",
+          "path": "postgresql/412aa184dc78-vendor.sqleditor.js.LICENSE.txt",
+          "sha256": "ea790f3be4982c33c90750c0596263856a361f65ff6369653718f93c29a6520c"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/web/pgadmin/templates/security/email/change_notice.html",
+          "path": "postgresql/0b5cc8e5ab03-change_notice.html",
+          "sha256": "8c128207f77164c28655fe5808b208ca24d4801445b6e82cef5f337d09ad9dc3"
+        },
+        {
+          "source_in_archive": "pgsql/pgAdmin 4/web/pgadmin/templates/security/email/change_notice.txt",
+          "path": "postgresql/9695dd3613d4-change_notice.txt",
+          "sha256": "770670ce25be7fb7934a51f3c3079bcc38de005f5a87b44d02c5cd63e1fa1125"
+        }
+      ]
+    },
+    {
+      "name": "caddy",
+      "version": "2.10.2",
+      "download_url": "https://github.com/caddyserver/caddy/releases/download/v2.10.2/caddy_2.10.2_windows_amd64.zip",
+      "download_sha256": "9fd1ef9be5d9b05852b66ccc25f96f23d8651bcab20779861a745bdffa273722",
+      "pinned_download_verified": true,
+      "notices": [
+        {
+          "source_in_archive": "LICENSE",
+          "path": "caddy/c693279643b8-LICENSE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        }
+      ]
+    },
+    {
+      "name": "cloudflared",
+      "version": "2026.10.7",
+      "download_url": "https://github.com/cloudflare/cloudflared/releases/download/2026.10.7/cloudflared-windows-amd64.exe",
+      "download_sha256": "2493dbc168923bb3e59e5e7716f71deced92992eea9acd6e9d74f84ac7751343",
+      "pinned_download_verified": true,
+      "notices": [
+        {
+          "upstream_url": "https://raw.githubusercontent.com/cloudflare/cloudflared/2026.10.7/LICENSE",
+          "path": "cloudflared/LICENSE.upstream.txt",
+          "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+        }
+      ]
+    },
+    {
+      "name": "winsw",
+      "version": "2.12.0",
+      "download_url": "https://github.com/winsw/winsw/releases/download/v2.12.0/WinSW-x64.exe",
+      "download_sha256": "05b82d46ad331cc16bdc00de5c6332c1ef818df8ceefcd49c726553209b3a0da",
+      "pinned_download_verified": true,
+      "notices": [
+        {
+          "upstream_url": "https://raw.githubusercontent.com/winsw/winsw/v2.12.0/LICENSE.txt",
+          "path": "winsw/LICENSE.upstream.txt",
+          "sha256": "1cdf703c10a70e5973bf3acf2a5eeabe7746237155b92db2034aeae26fdf7802"
+        }
+      ]
+    },
+    {
+      "name": "python",
+      "version": "3.14.10",
+      "download_url": "https://www.python.org/ftp/python/3.14.10/python-3.14.10-amd64.zip",
+      "download_sha256": "cc28026a650970cc1570bb127312f1f9634eb67abfe157ae6ca1acbbc627d091",
+      "pinned_download_verified": true,
+      "notices": [
+        {
+          "source_in_archive": "LICENSE.txt",
+          "path": "python/d0ed4cc3fb70-LICENSE.txt",
+          "sha256": "935cf13e19f8c31b497d20b05d73623431a226b230c3599bc30fa3348979bc68"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip-26.2.2.dist-info/licenses/LICENSE.txt",
+          "path": "python/f1748e186c21-LICENSE.txt",
+          "sha256": "634300a669d49aeae65b12c6c48c924c51a4cdf3d1ff086dc3456dc8bcaa2104"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip/_vendor/cachecontrol/LICENSE.txt",
+          "path": "python/d241dccb3d30-LICENSE.txt",
+          "sha256": "86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip/_vendor/certifi/LICENSE",
+          "path": "python/65846ce29c54-LICENSE",
+          "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip/_vendor/distlib/LICENSE.txt",
+          "path": "python/8a99e22a36b2-LICENSE.txt",
+          "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip/_vendor/distro/LICENSE",
+          "path": "python/5f23f10dd48a-LICENSE",
+          "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip/_vendor/idna/LICENSE.md",
+          "path": "python/a29c24b5de33-LICENSE.md",
+          "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip/_vendor/msgpack/COPYING",
+          "path": "python/6d09c328d311-COPYING",
+          "sha256": "492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip/_vendor/packaging/LICENSE",
+          "path": "python/e4047c973a91-LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip/_vendor/packaging/LICENSE.APACHE",
+          "path": "python/e4710a6455ac-LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip/_vendor/packaging/LICENSE.BSD",
+          "path": "python/a5a80d7ad273-LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip/_vendor/pkg_resources/LICENSE",
+          "path": "python/a9a607adc84a-LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip/_vendor/platformdirs/LICENSE",
+          "path": "python/e1a6843935de-LICENSE",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip/_vendor/pygments/LICENSE",
+          "path": "python/ffee4397a3f3-LICENSE",
+          "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip/_vendor/pyproject_hooks/LICENSE",
+          "path": "python/d9ba61e3f42e-LICENSE",
+          "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip/_vendor/requests/LICENSE",
+          "path": "python/a4f6540b75d8-LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip/_vendor/resolvelib/LICENSE",
+          "path": "python/498a1e8b90d6-LICENSE",
+          "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip/_vendor/rich/LICENSE",
+          "path": "python/596202b53afc-LICENSE",
+          "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip/_vendor/tomli/LICENSE",
+          "path": "python/e3923cc6312e-LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip/_vendor/tomli_w/LICENSE",
+          "path": "python/0a680b8e1293-LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip/_vendor/truststore/LICENSE",
+          "path": "python/0498a0a8e1fd-LICENSE",
+          "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip/_vendor/urllib3/LICENSE.txt",
+          "path": "python/859b5391c394-LICENSE.txt",
+          "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/cachecontrol/LICENSE.txt",
+          "path": "python/081bbd9aecc5-LICENSE.txt",
+          "sha256": "86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/certifi/LICENSE",
+          "path": "python/ae473590090f-LICENSE",
+          "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/distlib/LICENSE.txt",
+          "path": "python/60335b977416-LICENSE.txt",
+          "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/distro/LICENSE",
+          "path": "python/e14a2261deb1-LICENSE",
+          "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/idna/LICENSE.md",
+          "path": "python/6057f164f9bf-LICENSE.md",
+          "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/msgpack/COPYING",
+          "path": "python/511eb51fd596-COPYING",
+          "sha256": "492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/packaging/LICENSE",
+          "path": "python/8b550b75ca42-LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/packaging/LICENSE.APACHE",
+          "path": "python/633022dab5a7-LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/packaging/LICENSE.BSD",
+          "path": "python/72700c5d9aa8-LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/pkg_resources/LICENSE",
+          "path": "python/dead26954371-LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/platformdirs/LICENSE",
+          "path": "python/dfaad860f6e4-LICENSE",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/pygments/LICENSE",
+          "path": "python/43c289a63322-LICENSE",
+          "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/pyproject_hooks/LICENSE",
+          "path": "python/e59ea0ac0522-LICENSE",
+          "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/requests/LICENSE",
+          "path": "python/950bd2e76932-LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/resolvelib/LICENSE",
+          "path": "python/b7e2e4979785-LICENSE",
+          "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/rich/LICENSE",
+          "path": "python/a8058c350e6a-LICENSE",
+          "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/tomli/LICENSE",
+          "path": "python/0bec1b6b7a18-LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/tomli_w/LICENSE",
+          "path": "python/615097c9d955-LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/truststore/LICENSE",
+          "path": "python/b0c692d3eae7-LICENSE",
+          "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca"
+        },
+        {
+          "source_in_archive": "Lib/site-packages/pip-26.2.2.dist-info/licenses/src/pip/_vendor/urllib3/LICENSE.txt",
+          "path": "python/f03c2fb3457d-LICENSE.txt",
+          "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686"
+        },
+        {
+          "source_in_archive": "Doc/html/copyright.html",
+          "path": "python/ce9785dad0bc-copyright.html",
+          "sha256": "ae4b2c3691d3e2892a5b3f17e1822af47b1f32cd03b429455c7398ad80e7ba44"
+        },
+        {
+          "source_in_archive": "Doc/html/license.html",
+          "path": "python/8fe06e40e644-license.html",
+          "sha256": "a750b9b5b9155921334677f9bbb3219374c16164bb12d9d8acd6d0449eca94bd"
+        }
+      ]
+    }
+  ]
+}

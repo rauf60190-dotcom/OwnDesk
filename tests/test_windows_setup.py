@@ -76,10 +76,14 @@ def test_only_postgres_runtime_is_extracted(tmp_path):
     with ZipFile(archive, 'w') as package:
         package.writestr('pgsql/bin/postgres.exe', b'executable')
         package.writestr('pgsql/share/postgresql.conf.sample', b'config')
+        package.writestr('pgsql/server_license.txt', b'original server notice')
+        package.writestr('pgsql/commandlinetools_3rd_party_licenses.txt', b'original library notices')
         package.writestr('pgsql/pgAdmin 4/ignored.exe', b'not required')
     target = tmp_path / 'staging'
-    setup.extract(archive, target, ('pgsql/bin/', 'pgsql/share/'))
+    setup.extract(archive, target, setup.POSTGRES_ARCHIVE_PREFIXES)
     assert (target / 'pgsql/bin/postgres.exe').is_file()
+    assert (target / 'pgsql/server_license.txt').read_bytes() == b'original server notice'
+    assert (target / 'pgsql/commandlinetools_3rd_party_licenses.txt').read_bytes() == b'original library notices'
     assert not (target / 'pgsql/pgAdmin 4').exists()
 
 

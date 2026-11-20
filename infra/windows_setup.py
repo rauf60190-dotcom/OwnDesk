@@ -12,6 +12,8 @@ from urllib.request import urlopen
 from zipfile import ZipFile
 
 ROOT = Path(__file__).resolve().parents[1]
+POSTGRES_ARCHIVE_PREFIXES = ('pgsql/bin/', 'pgsql/lib/', 'pgsql/share/',
+                             'pgsql/server_license.txt', 'pgsql/commandlinetools_3rd_party_licenses.txt')
 
 
 def digest(path):
@@ -80,7 +82,7 @@ def prepare_tools(data, report=print, cache=None):
         with tempfile.TemporaryDirectory(prefix=key + '-', dir=tools) as temporary:
             staging = Path(temporary)
             if key == 'postgresql':
-                extract(archive, staging, ('pgsql/bin/', 'pgsql/lib/', 'pgsql/share/'))
+                extract(archive, staging, POSTGRES_ARCHIVE_PREFIXES)
             elif key == 'caddy':
                 extract(archive, staging, ('caddy.exe',))
             else:
