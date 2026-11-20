@@ -132,7 +132,7 @@ jobs:
       - name: Compile and verify unsigned bootstrap
         shell: pwsh
         run: |
-          ./infra/windows-installer/Build-Installer.ps1 -Archive "$env:RUNNER_TEMP/payload/OwnDesk.zip" -Metadata "$env:RUNNER_TEMP/payload/release.json" -OutputDirectory "$env:RUNNER_TEMP/installer"
+          ./infra/windows-installer/Build-Installer.ps1 -Archive "$env:RUNNER_TEMP/payload/OwnDesk.zip" -Metadata "$env:RUNNER_TEMP/payload/release.json" -OutputDirectory "$env:RUNNER_TEMP/installer" -RunValidationTests
       - name: Check extraction without installing a service
         shell: pwsh
         run: |

@@ -73,7 +73,7 @@ internal static class Setup
                 for (string parent = Path.GetDirectoryName(name); !String.IsNullOrEmpty(parent); parent = Path.GetDirectoryName(parent))
                     if (names.Contains(parent)) throw new InvalidDataException("Конфликт файлов и папок.");
             foreach (string required in new[] { "VERSION", "infra/windows_bootstrap.ps1", "infra/windows_python.ps1",
-                "infra/windows-python.json", "infra/windows-dependencies.json", "infra/windows_server_window.py" })
+                "infra/windows-python.json", "infra/windows-dependencies.json", "infra/windows_server_window.py", "infra/INSTALLATION-NOTICE.txt" })
                 if (archive.GetEntry("OwnDesk/" + required) == null) throw new InvalidDataException("Неполный дистрибутив OwnDesk.");
             using (StreamReader reader = new StreamReader(archive.GetEntry("OwnDesk/VERSION").Open()))
                 if (reader.ReadToEnd().Trim() != Release) throw new InvalidDataException("Версия дистрибутива не совпадает.");

@@ -1,7 +1,8 @@
 param(
     [string]$Archive = (Join-Path $PSScriptRoot '../../../OwnDesk.zip'),
     [string]$Metadata = (Join-Path $PSScriptRoot '../../../release.json'),
-    [string]$OutputDirectory = (Join-Path $PSScriptRoot '../../../installer-candidate')
+    [string]$OutputDirectory = (Join-Path $PSScriptRoot '../../../installer-candidate'),
+    [switch]$RunValidationTests
 )
 $ErrorActionPreference='Stop'
 $buildArchive=(Resolve-Path -LiteralPath $Archive).Path
@@ -22,6 +23,27 @@ $buildArguments=@('/nologo','/target:winexe','/platform:x64','/optimize+',('/out
 $buildArguments+=('/resource:'+(Join-Path $PSScriptRoot '../INSTALLATION-NOTICE.txt')+',OwnDesk.InstallationNotice')
 & $buildCompiler @buildArguments
 if($LASTEXITCODE -ne 0) { throw 'Installer compilation failed' }
+if ($RunValidationTests) {
+    $testDirectory = New-Item -ItemType Directory -Path (Join-Path $buildOutput.FullName 'validation-tests')
+    $testResource = Join-Path $testDirectory.FullName 'invalid-resource.bin'
+    [IO.File]::WriteAllBytes($testResource, [Text.Encoding]::UTF8.GetBytes('deliberately invalid CI fixture'))
+    foreach ($testMode in @('validation', 'bad-resource')) {
+        $testExe = Join-Path $testDirectory.FullName ($testMode + '.exe')
+        $testPayload = if ($testMode -eq 'validation') { $buildArchive } else { $testResource }
+        $testArguments = @('/nologo', '/target:exe', '/platform:x64', '/optimize+', '/main:InstallerValidationTests',
+            ('/out:' + $testExe), ('/resource:' + $testPayload + ',OwnDesk.Payload'),
+            '/reference:System.dll', '/reference:System.Core.dll', '/reference:System.Drawing.dll',
+            '/reference:System.Windows.Forms.dll', '/reference:System.IO.Compression.dll', '/reference:System.Web.Extensions.dll',
+            $buildSource, (Join-Path $PSScriptRoot 'ValidationTests.cs'))
+        & $buildCompiler @testArguments
+        if ($LASTEXITCODE -ne 0) { throw 'Installer validation test compilation failed' }
+        $testReport = Join-Path $buildOutput.FullName ($testMode + '-tests.json')
+        $testProcess = Start-Process -FilePath $testExe -ArgumentList @($testMode, ('"' + $testReport + '"')) -WindowStyle Hidden -Wait -PassThru
+        if ($testProcess.ExitCode -ne 0) { throw ('Installer validation tests failed: ' + $testMode) }
+        $testResult = Get-Content -LiteralPath $testReport -Raw | ConvertFrom-Json
+        if (!$testResult.success -or $testResult.passed -lt 1 -or $testResult.services_modified) { throw 'Invalid installer test result' }
+    }
+}
 $buildVerified=Join-Path $buildOutput.FullName 'payload-verified.json'
 try {
     $buildProcess=Start-Process -FilePath $buildExe -ArgumentList @('--verify',('"'+$buildVerified+'"')) -WindowStyle Hidden -PassThru -Wait
